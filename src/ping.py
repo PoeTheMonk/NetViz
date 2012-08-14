@@ -253,12 +253,7 @@ def netVizPing(my_socket, dest_addr, ID = None, NUM = None):
     packet = header + data
     my_socket.sendto(packet, (dest_addr, 1)) # Don't know about the 1
 
-def netVizPingArray(my_socket, dest_addrs, ID = None):
-    if not(bool(ID)):
-        ID = os.getpid() & 0xFFFF
-    for i in range(3):
-        for addr in dest_addrs:
-            netVizPing(my_socket, addr, ID)
+
     
 
 if __name__ == '__main__':

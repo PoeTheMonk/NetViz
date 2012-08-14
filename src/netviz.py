@@ -1,7 +1,7 @@
 # Hello World. Here goes nothing.
 # This is a Python script for my network visualizer program.
 # Maybe it can go on the Technology Club website.
-# (Copyright) 2012 by Mark Miller
+# (Copyright) 2012 by Mark Miller, Paul Ernst
 
 # To-Do list
 # button-press to sync
@@ -16,6 +16,10 @@ import time
 import threading
 import math
 import socket
+import ping
+from struct import pack, unpack
+if (os.name == 'nt'):
+    import arp
 
 #-----Definitions-----#
 
@@ -39,26 +43,7 @@ def safeOpenMyCSV(filename):
     except IOError as e:
         return(None)
 
-def findDNS(obj):
-    ip = str(obj.ip)
-    if (os.name == 'nt'):
-        try:
-            result = socket.gethostbyaddr(ip)
-        except:
-            result = ("Not found", "", ip)
-        obj.dns = result[0]
-        return
-    result = commands.getoutput('host ' + ip)
-    result = result.split(' ')
-    if len(result) > 1:
-        result2 = result.pop(1)
-        if result2 == 'domain':
-            obj.dns = result.pop(3)
-            obj.dns = obj.dns[:-1]
-        else:
-            obj.dns = 'Not found'
-    else:
-        obj.dns = 'Not found'
+
 
 def MACToObj(mac, listToSearch):
     'Returns the current unit object of a given MAC address, if possible.'
@@ -77,12 +62,28 @@ def pingObj(list, findingMac, findingDNS, MACOwners):
         if findingDNS:
             findDNS(unitite)
 
+def netVizPingArray(my_socket, unitlist, findingMac = False, findingDNS = False, ID = None):
+    if not(bool(ID)):
+        ID = os.getpid() & 0xFFFF
+    for i in range(3):
+        for unit in unitlist:
+            ping.netVizPing(my_socket, unit.ip, ID)
+    my_socket.close()
+    if (findingMac):
+        for unit in unitlist:
+             unit.findmac()   
+    if (findingDNS):
+        for unit in unitlist:
+             unit.findDNS()   
+
+            
 def findOwnIP():
-    if (os.name == "nt"):
-        ipconfig = winCommand("ipconfig")
-        iploc = ipconfig.find("IP Address")
-        return ipconfig[iploc + 36:ipconfig.find("\r", iploc)]
-    return commands.getoutput('ifconfig en1 | grep inet | grep -v inet6 | cut -d" " -f2')
+##    if (os.name == "nt"):
+##        ipconfig = winCommand("ipconfig")
+##        iploc = ipconfig.find("IP Address")
+##        return ipconfig[iploc + 36:ipconfig.find("\r", iploc)]
+##    return commands.getoutput('ifconfig en1 | grep inet | grep -v inet6 | cut -d" " -f2')
+    return socket.gethostbyname(socket.gethostname())
     
 def findNetworkBoundaries():
     if (os.name == 'nt'):
@@ -483,34 +484,54 @@ class Unit:
         self.dns = ''
         self.owner = 'Not Found'
     
-    def ping(self):
-        'Returns true or false based on the reply of ping to IP.'
-        self.online = False
-        a = ''
-        if (os.name == "nt"):
-            tmp = winCommand("ping -n 1 -w 500 " + self.ip)
-            a = tmp[tmp.find("Rec") + 11]
-        else:
-            testString = 'if ping -t 1 -c 1 ' + self.ip
-            testString += ' > /dev/null; then echo 1; else echo 0; fi'
-            a = commands.getoutput(testString)
-        if a != '':
-            if bool(int(a)):
-                self.online = True
-                self.color = (0, 255, 0)
+##    def ping(self):
+##        'Returns true or false based on the reply of ping to IP.'
+##        self.online = False
+##        a = ''
+##        if (os.name == "nt"):
+##            tmp = winCommand("ping -n 1 -w 500 " + self.ip)
+##            a = tmp[tmp.find("Rec") + 11]
+##        else:
+##            testString = 'if ping -t 1 -c 1 ' + self.ip
+##            testString += ' > /dev/null; then echo 1; else echo 0; fi'
+##            a = commands.getoutput(testString)
+##        if a != '':
+##            if bool(int(a)):
+##                self.online = True
+##                self.color = (0, 255, 0)
+
+    def findDNS(self):
+        ip = str(self.ip)
+        #if (os.name == 'nt'):
+        try:
+            result = socket.gethostbyaddr(ip)
+        except:
+            result = ("Not found", "", ip)
+        self.dns = result[0]
+            #return
+##        result = commands.getoutput('host ' + ip)
+##        result = result.split(' ')
+##        if len(result) > 1:
+##            result2 = result.pop(1)
+##            if result2 == 'domain':
+##                self.dns = result.pop(3)
+##                self.dns = obj.dns[:-1]
+##            else:
+##                self.dns = 'Not found'
+##        else:
+##            self.dns = 'Not found'
     
     def findmac(self):
         'Returns the MAC address (str) given an IP.'
         if (os.name == 'nt'):
-            result = winCommand('arp -a ' + self.ip)
-            if (result.startswith('No')):
+            result = arp.arp_resolve(self.ip, 0)
+            result = arp.mac_straddr(result, 1, ":")
+            if (result == '00:00:00:00:00:00'):
                 self.mac = 'no'
                 return 'no'
             else:
-                tmp = result.find(self.ip) + 22
-                mac = result[tmp:tmp + 17].split("-") #on windows, mac addresses are stored with - between numbers instead of :
-                self.mac = mac[0] + ":" + mac[1] + ":" + mac[2] + ":" + mac[3] + ":" + mac[4] + ":" + mac[5]
-                return result[tmp:tmp + 17]
+                self.mac = result
+                return result
         result = commands.getoutput('arp ' + self.ip)
         result = result.split(' ')
         if len(result) > 2:
@@ -518,8 +539,101 @@ class Unit:
             self.mac = result
             return result
             del result
+
+
+class UnitManager:
+    def __init__(self, startIP, endIP):
+        startIP = startIP.split('.')
+        startNum = [0, 0, 0, 0]
+        endIP = endIP.split('.')
+        endNum = [0, 0, 0, 0]
+        dif = range(4)
+        for i in range(4):
+            startNum[i] = int(startIP[i])
+            endNum[i] = int(endIP[i])
+            dif[i] = endNum[i] - startNum[i] + 1
+        tmp = list(startNum)
+        self.unitList = range(dif[0] * dif[1] * dif[2] * dif[3])
+        while(tmp[0] <= endNum[0]):
+            while(tmp[1] <= endNum[1]):
+                while(tmp[2] <= endNum[2]):
+                    while(tmp[3] <= endNum[3]):
+                        self.unitList[(tmp[0] - startNum[0]) * dif[1] * dif[2] * dif[3] + (tmp[1] - startNum[1])
+                            * dif[2] * dif[3] + (tmp[2] - startNum[2]) * dif[3] + tmp[3] - startNum[3]] = Unit(
+                            str(tmp[0]) + '.' + str(tmp[1]) + '.' + str(tmp[2]) + '.' + str(tmp[3])) 
+                        tmp[3] += 1
+                    tmp[2] += 1
+                    tmp[3] = startNum[3]
+                tmp[1] += 1
+                tmp[2] = startNum[2]
+            tmp[0] += 1
+            tmp[1] = startNum[1]
+        self.startNum = startNum
+        self.endNum = endNum
+        self.dif = dif
+        
+    def getUnit(self, IP):
+        tmpIP = IP.split('.')
+        tmpNum = range(4)
+        for i in range(4):
+            tmpNum[i] = int(tmpIP[i])
+            if not(0 <= tmpNum[i] - self.startNum[i] < self.dif[i]):
+                return None
+        return self.unitList[(tmpNum[0] - self.startNum[0]) * self.dif[1] * self.dif[2] * self.dif[3] + (tmpNum[1] - self.startNum[1])
+            * self.dif[2] * self.dif[3] + (tmpNum[2] - self.startNum[2]) * self.dif[3] + tmpNum[3] - self.startNum[3]]
+
+    def pingAll(self):
+        it = threading.Thread(target=netVizPingArray, name='Pinger', args=(ICMPS.getICMPSock(),
+            list(self.unitList), searchMACToggle.toggled, searchDNSToggle.toggled))
+        it.start()
+           
+
     
-    
+
+class ICMPServer:
+    def __init__(self):
+        self.s = None
+        
+    def getICMPSock(self):
+        ''' Gets raw socket (requires root) for sending ICMP pings '''
+        icmp = socket.getprotobyname("icmp")
+        try:
+            my_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)
+        except socket.error, (errno, msg):
+            if errno == 1:
+                # Operation not permitted
+                msg = msg + (
+                    " - Note that ICMP messages can only be sent from processes"
+                    " running as root."
+                )
+                raise socket.error(msg)
+            raise # raise the original error
+        return my_socket
+
+    def listen(self, sock = None):
+        HOST = socket.gethostbyname(socket.gethostname())
+        if (sock):
+            self.s = sock
+        else:
+            self.s = self.getICMPSock()
+        self.s.bind((HOST, 0))
+        while running:
+            frame, addr = self.s.recvfrom(8192)
+            TYPE = None
+            #ID = frame[24:26]
+            #SEQ = frame[26:28]
+            if (frame[20] == '\x00'): #Packet is response
+                TYPE = 'Ping response'
+            elif (frame[20] == '\x08'): #Packet is request
+                TYPE = 'Ping request'
+            if (TYPE != None):
+                #print TYPE, "recieved from", addr[0]
+                unit = globalUnitManager.getUnit(addr[0])
+                if (unit != None):
+                    unit.online = True
+                    unit.color = (0, 255, 0)
+        self.s.close()
+
 
 #-----Settings / Options-----#
 width = 960
@@ -531,7 +645,9 @@ mouse_y = 0
 
 #-----Global Important Stuff-----#
 running = 1
-globalUnitList = []
+#globalUnitList = []
+globalUnitManager = UnitManager(findOwnIP(), findOwnIP())
+ICMPS = ICMPServer()
 guyArray = []
 displayIPStart = ''
 displayIPEnd = ''
@@ -617,23 +733,29 @@ if wellthen != None:
             MACs.append(TrackedMAC(mac, name))
 MACTracker = MACTrackRunner(MACs, FONT12)
 
+#-----ICMP Server-----#
+st = threading.Thread(target=ICMPS.listen, name='ICMPS')
+st.start()
+
 #-----Game Loop----#
 while running:
     #----Measure Time----#
     beginStep = time.time()
     if stepCount % 20 == 0:
         MACTracker.organize('name')
-    if threading.activeCount() < 2 and constantUpdateToggle.toggled:
-        unitList = list(globalUnitList)
-        ownIP = findOwnIP()
-        ipsInThread = math.ceil(len(unitList) / 64.0)
-        while unitList != []:
-            elementList = []
-            for timelol in range(int(ipsInThread)):
-                if unitList != []:
-                    elementList.append(unitList.pop())
-            it = threading.Thread(target=pingObj, args=(elementList, searchMACToggle.toggled, searchDNSToggle.toggled, MACOwners))
-            it.start()
+    
+    # TODO: IP Constant update
+    # if threading.activeCount() < 2 and constantUpdateToggle.toggled:
+        # unitList = list(globalUnitList)
+        # ownIP = findOwnIP()
+        # ipsInThread = math.ceil(len(unitList) / 64.0)
+        # while unitList != []:
+            # elementList = []
+            # for timelol in range(int(ipsInThread)):
+                # if unitList != []:
+                    # elementList.append(unitList.pop())
+            # it = threading.Thread(target=pingObj, args=(elementList, searchMACToggle.toggled, searchDNSToggle.toggled, MACOwners))
+            # it.start()
     
     #----Process Events----#
     event = pygame.event.poll()
@@ -650,13 +772,13 @@ while running:
         running = 0
     
     elementCount = 0
-    ipCount = len(globalUnitList)
+    ipCount = len(globalUnitManager.unitList)
     if ipCount != 0:
-        ipPower = 1
-        while 2**ipPower < ipCount:
+        ipPower = 0
+        while (1 << ipPower) < ipCount:
             ipPower += 1
-        widthCount = 2**(ipPower/2)
-        heightCount = 2**(ipPower - ipPower/2)
+        widthCount = 1 << (ipPower/2)
+        heightCount = 1 << (ipPower - ipPower/2)
         squareWidth = 512 / widthCount
         squareHeight = 512 / heightCount
     
@@ -683,36 +805,40 @@ while running:
                     (displayIPStart, displayIPEnd) = findNetworkBoundaries()
                 elif result == 'setRangeButton':
                     errorText = ''
-                    starting = displayIPStart.split('.')
-                    ending = displayIPEnd.split('.')
-                    if len(starting) == 4 == len(ending):
-                        starting1 = starting.pop(0)
-                        if starting1 == ending.pop(0):
-                            starting2 = starting.pop(0)
-                            if starting2 == ending.pop(0):
-                                for element in globalUnitList:
-                                    del element
-                                globalUnitList = []
-                                starting3 = int(starting.pop(0))
-                                ending3 = int(ending.pop(0))
-                                starting4 = int(starting.pop())
-                                ending4 = int(ending.pop())
-                                while starting3 <= ending3:
-                                    while starting4 <= ending4:
-                                        ip = starting1 + '.' + starting2 + '.'
-                                        ip += str(starting3) + '.'
-                                        ip += str(starting4)
-                                        unit = Unit(ip)
-                                        globalUnitList.append(unit)
-                                        starting4 += 1
-                                    starting4 = 0
-                                    starting3 += 1
-                            else:
-                                errorText = 'SCAN TOO LARGE'
-                        else:
-                            errorText = 'SCAN TOO LARGE'
+                    if (displayIPStart == '' or displayIPEnd == ''):
+                        errorText = 'No IP entered'
                     else:
-                        errorText = 'INVALID IP'
+                        globalUnitManager = UnitManager(displayIPStart, displayIPEnd)
+                    #starting = displayIPStart.split('.')
+                    #ending = displayIPEnd.split('.')
+                    #if len(starting) == 4 == len(ending):
+                        # starting1 = starting.pop(0)
+                        # if starting1 == ending.pop(0):
+                            # starting2 = starting.pop(0)
+                            # if starting2 == ending.pop(0):
+                                # for element in globalUnitList:
+                                    # del element
+                                # globalUnitList = []
+                                # starting3 = int(starting.pop(0))
+                                # ending3 = int(ending.pop(0))
+                                # starting4 = int(starting.pop())
+                                # ending4 = int(ending.pop())
+                                # while starting3 <= ending3:
+                                    # while starting4 <= ending4:
+                                        # ip = starting1 + '.' + starting2 + '.'
+                                        # ip += str(starting3) + '.'
+                                        # ip += str(starting4)
+                                        # unit = Unit(ip)
+                                        # globalUnitList.append(unit)
+                                        # starting4 += 1
+                                    # starting4 = 0
+                                    # starting3 += 1
+                            # else:
+                                # errorText = 'SCAN TOO LARGE'
+                        # else:
+                            # errorText = 'SCAN TOO LARGE'
+                    #else:
+                    #    errorText = 'INVALID IP'
                 elif result == 'startingIPInput':
                     selectedBox = 1
                 elif result == 'endingIPInput':
@@ -769,21 +895,16 @@ while running:
                 elif result == 'nameInput':
                     selectedBox = 4
                 elif result == 'refreshButton':
-                    unitList = list(globalUnitList)
-                    ownIP = findOwnIP()
-                    ipsInThread = math.ceil(len(unitList) / 10.0)
-                    while unitList != []:
-                        elementList = []
-                        for timelol in range(int(ipsInThread)):
-                            if unitList != []:
-                                elementList.append(unitList.pop())
-                        it = threading.Thread(target=pingObj, args=(elementList, searchMACToggle.toggled, searchDNSToggle.toggled, MACOwners))
-                        it.start()
+                    globalUnitManager.pingAll()
             elif 404 <= mouse_x < 916:
                 if 44 <= mouse_y < 556:
-                    if globalUnitList != []:
+                    #if globalUnitList != []:
                         number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
-                        wellthen = list(globalUnitList)
+                        # wellthen = list(globalUnitList) 
+                        # if len(wellthen) > number:
+                            # maySelectedIP = wellthen.pop(number)
+                        #TODO: fix this eventually
+                        wellthen = list(globalUnitManager.unitList) 
                         if len(wellthen) > number:
                             maySelectedIP = wellthen.pop(number)
                             if selectedIP != maySelectedIP:
@@ -871,13 +992,13 @@ while running:
         pygame.draw.rect(screen, (0, 0, 0), rfp(0, 240, 360, 600), 1)
     
     elementCount = 0
-    ipCount = len(globalUnitList)
+    ipCount = len(globalUnitManager.unitList)
     if ipCount != 0:
         ipPower = 1
-        while 2**ipPower < ipCount:
+        while (1 << ipPower) < ipCount:
             ipPower += 1
-        widthCount = 2**(ipPower/2)
-        heightCount = 2**(ipPower - ipPower/2)
+        widthCount = 1 << (ipPower/2)
+        heightCount = 1 << (ipPower - ipPower/2)
         squareWidth = 512 / widthCount
         squareHeight = 512 / heightCount
         if squareWidth != 1 and squareHeight != 1:
@@ -885,7 +1006,7 @@ while running:
         else:
             sub = 0
     
-    for element in globalUnitList:
+    for element in globalUnitManager.unitList:
         element_x = elementCount % widthCount
         element_y = elementCount / widthCount
         inset_rect = pygame.Rect(405 + squareWidth*element_x,
@@ -933,10 +1054,10 @@ while running:
     
     if selectedIP == None:
         if 404 <= mouse_x < 916:
-            if 44 <= mouse_y < 556:
-                if globalUnitList != []:
+            if 44 <= mouse_y < 556: # TODO: this needs to be fixed
+                #if globalUnitManager.unitList != []: 
                     number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
-                    wellthen = list(globalUnitList)
+                    wellthen = list(globalUnitManager.unitList)
                     if len(wellthen) > number:
                         mouseoverIP = wellthen.pop(number)
                         firstLine = 'IP: ' + mouseoverIP.ip + ' (' + mouseoverIP.username + ')'
@@ -1003,9 +1124,9 @@ while running:
     #print stepLength
     if stepLength < 1.0/fps:
         time.sleep(1.0/fps - stepLength)
-    else:
+    #else:
         #print "frame lag " + str((stepLength - 1.0/fps)*1000) + " ms"
-        pass
+        #pass
 
 pygame.display.quit()
 pygame.quit()

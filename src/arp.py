@@ -306,7 +306,7 @@ Functions:
     
 if __name__ == "__main__":
     """ Test the module by sending an ARP query """
-    ip = "192.168.1.1"
+    ip = "192.168.1.64"
     result = arp_resolve(ip, 0)
     print ip, "is at", mac_straddr(result, 1, ":")
 
