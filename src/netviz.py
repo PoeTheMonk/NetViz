@@ -9,14 +9,7 @@
 # pretty-fy
 
 #-----Import Modules-----#
-import pygame
-import os
-import commands
-import time
-import threading
-import math
-import socket
-import ping
+import pygame, os, commands, time, threading, math, socket, select, ping
 from struct import pack, unpack
 if (os.name == 'nt'):
     import arp
@@ -43,8 +36,6 @@ def safeOpenMyCSV(filename):
     except IOError as e:
         return(None)
 
-
-
 def MACToObj(mac, listToSearch):
     'Returns the current unit object of a given MAC address, if possible.'
     a = None
@@ -53,30 +44,29 @@ def MACToObj(mac, listToSearch):
             a = element
     return a
 
-def pingObj(list, findingMac, findingDNS, MACOwners):
-    for unitite in list:
-        unitite.ping()
-        if findingMac:
-            unitite.findmac()
-            findMACOwner(MACOwners, unitite)
-        if findingDNS:
-            findDNS(unitite)
-
 def netVizPingArray(my_socket, unitlist, findingMac = False, findingDNS = False, ID = None):
+    startTime = time.time()
     if not(bool(ID)):
         ID = os.getpid() & 0xFFFF
-    for i in range(3):
+    for i in range(2):
         for unit in unitlist:
             ping.netVizPing(my_socket, unit.ip, ID)
+            time.sleep(0.002)
     my_socket.close()
+    pingTime = time.time()
     if (findingMac):
         for unit in unitlist:
-             unit.findmac()   
+            unit.findmac()
+            time.sleep(0.002)
+    macTime = time.time()
     if (findingDNS):
         for unit in unitlist:
-             unit.findDNS()   
-
-            
+            unit.findDNS()
+            time.sleep(0.002)
+    dnsTime = time.time()
+    print(pingTime - startTime, macTime - pingTime, dnsTime - macTime)
+    print('Pinger exited')
+ 
 def findOwnIP():
 ##    if (os.name == "nt"):
 ##        ipconfig = winCommand("ipconfig")
@@ -94,13 +84,10 @@ def findNetworkBoundaries():
         SubnetMask = ipconfig[SMloc + 36:ipconfig.find("\r", SMloc)]
         mask = SubnetMask.split('.')
         dg = defaultGateway.split('.')
-        intmask = range(0, 4)
-        intdg = range(0, 4)
+        intdg = [0, 0, 0, 0]
         for i in range(0, 4): #Convert strings into ints and find highest IP address
-            intmask[i] = int(mask[i])
-            intdg[i] = int(dg[i])
-            intdg[i] += 255 ^ intmask[i]
-        intdg[3] -= 1 #If Default Gateway starts at 1, you need to subtract 1
+            intdg[i] = int(dg[i]) + (255 ^ int(mask[i]))
+            intdg[i] = intdg[i] + ((255 - intdg[i]) & ((255 - intdg[i]) >> 31)) #intdg[i] = 255 or less
         endingIP = str(intdg[0]) + '.' + str(intdg[1]) + '.' + str(intdg[2]) + '.' + str(intdg[3])
         return (defaultGateway, endingIP)
     endingIP = commands.getoutput('ifconfig en1 | grep inet | grep -v inet6 | cut -d" " -f6')
@@ -130,7 +117,7 @@ def rfp(a, b, c, d):
 def findMACOwner(dict, unit):
     owner = 'Not Found'
     d = unit.mac
-    if d != 'no' and d != '(incomplete)':
+    if d != 'no' and not(d.startswith('(')):
         e = d.split(':')
         e1 = e.pop(0)
         e2 = e.pop(0)
@@ -476,50 +463,25 @@ class MACTrackRunner:
 class Unit:
     def __init__(self, ip):
         self.ip = ip
-        self.mac = 'no'
+        self.mac = '(Not Searched)'
         self.online = False
         self.color = (0, 0, 0)
         self.ownIP = False
         self.username = ''
         self.dns = ''
         self.owner = 'Not Found'
-    
-##    def ping(self):
-##        'Returns true or false based on the reply of ping to IP.'
-##        self.online = False
-##        a = ''
-##        if (os.name == "nt"):
-##            tmp = winCommand("ping -n 1 -w 500 " + self.ip)
-##            a = tmp[tmp.find("Rec") + 11]
-##        else:
-##            testString = 'if ping -t 1 -c 1 ' + self.ip
-##            testString += ' > /dev/null; then echo 1; else echo 0; fi'
-##            a = commands.getoutput(testString)
-##        if a != '':
-##            if bool(int(a)):
-##                self.online = True
-##                self.color = (0, 255, 0)
 
     def findDNS(self):
         ip = str(self.ip)
         #if (os.name == 'nt'):
+        if (self.mac.startswith('n') or self.mac.startswith('(')): # assume that if no mac address, no dns)
+            self.dns = 'Not found'
+            return
         try:
             result = socket.gethostbyaddr(ip)
         except:
             result = ("Not found", "", ip)
         self.dns = result[0]
-            #return
-##        result = commands.getoutput('host ' + ip)
-##        result = result.split(' ')
-##        if len(result) > 1:
-##            result2 = result.pop(1)
-##            if result2 == 'domain':
-##                self.dns = result.pop(3)
-##                self.dns = obj.dns[:-1]
-##            else:
-##                self.dns = 'Not found'
-##        else:
-##            self.dns = 'Not found'
     
     def findmac(self):
         'Returns the MAC address (str) given an IP.'
@@ -547,7 +509,7 @@ class UnitManager:
         startNum = [0, 0, 0, 0]
         endIP = endIP.split('.')
         endNum = [0, 0, 0, 0]
-        dif = range(4)
+        dif = [0, 0, 0, 0]
         for i in range(4):
             startNum[i] = int(startIP[i])
             endNum[i] = int(endIP[i])
@@ -574,7 +536,7 @@ class UnitManager:
         
     def getUnit(self, IP):
         tmpIP = IP.split('.')
-        tmpNum = range(4)
+        tmpNum = [0, 0, 0, 0]
         for i in range(4):
             tmpNum[i] = int(tmpIP[i])
             if not(0 <= tmpNum[i] - self.startNum[i] < self.dif[i]):
@@ -583,12 +545,11 @@ class UnitManager:
             * self.dif[2] * self.dif[3] + (tmpNum[2] - self.startNum[2]) * self.dif[3] + tmpNum[3] - self.startNum[3]]
 
     def pingAll(self):
-        it = threading.Thread(target=netVizPingArray, name='Pinger', args=(ICMPS.getICMPSock(),
+        pt = threading.Thread(target=netVizPingArray, name='Pinger', args=(ICMPS.getICMPSock(),
             list(self.unitList), searchMACToggle.toggled, searchDNSToggle.toggled))
-        it.start()
-           
-
-    
+        pt.setDaemon(True)
+        pt.start()
+ 
 
 class ICMPServer:
     def __init__(self):
@@ -618,6 +579,12 @@ class ICMPServer:
             self.s = self.getICMPSock()
         self.s.bind((HOST, 0))
         while running:
+            startedSelect = time.time()
+            whatReady = select.select([self.s], [], [], 5)
+            howLongInSelect = (time.time() - startedSelect)
+            if whatReady[0] == []: # Timeout
+                #print("timeout")
+                continue
             frame, addr = self.s.recvfrom(8192)
             TYPE = None
             #ID = frame[24:26]
@@ -627,12 +594,11 @@ class ICMPServer:
             elif (frame[20] == '\x08'): #Packet is request
                 TYPE = 'Ping request'
             if (TYPE != None):
-                #print TYPE, "recieved from", addr[0]
                 unit = globalUnitManager.getUnit(addr[0])
                 if (unit != None):
                     unit.online = True
-                    unit.color = (0, 255, 0)
         self.s.close()
+        print('ICMPS exited')
 
 
 #-----Settings / Options-----#
@@ -645,7 +611,6 @@ mouse_y = 0
 
 #-----Global Important Stuff-----#
 running = 1
-#globalUnitList = []
 globalUnitManager = UnitManager(findOwnIP(), findOwnIP())
 ICMPS = ICMPServer()
 guyArray = []
@@ -745,17 +710,7 @@ while running:
         MACTracker.organize('name')
     
     # TODO: IP Constant update
-    # if threading.activeCount() < 2 and constantUpdateToggle.toggled:
-        # unitList = list(globalUnitList)
-        # ownIP = findOwnIP()
-        # ipsInThread = math.ceil(len(unitList) / 64.0)
-        # while unitList != []:
-            # elementList = []
-            # for timelol in range(int(ipsInThread)):
-                # if unitList != []:
-                    # elementList.append(unitList.pop())
-            # it = threading.Thread(target=pingObj, args=(elementList, searchMACToggle.toggled, searchDNSToggle.toggled, MACOwners))
-            # it.start()
+    
     
     #----Process Events----#
     event = pygame.event.poll()
@@ -770,6 +725,7 @@ while running:
             if num != macLen:
                 file.write('\n')
         running = 0
+        break
     
     elementCount = 0
     ipCount = len(globalUnitManager.unitList)
@@ -809,36 +765,6 @@ while running:
                         errorText = 'No IP entered'
                     else:
                         globalUnitManager = UnitManager(displayIPStart, displayIPEnd)
-                    #starting = displayIPStart.split('.')
-                    #ending = displayIPEnd.split('.')
-                    #if len(starting) == 4 == len(ending):
-                        # starting1 = starting.pop(0)
-                        # if starting1 == ending.pop(0):
-                            # starting2 = starting.pop(0)
-                            # if starting2 == ending.pop(0):
-                                # for element in globalUnitList:
-                                    # del element
-                                # globalUnitList = []
-                                # starting3 = int(starting.pop(0))
-                                # ending3 = int(ending.pop(0))
-                                # starting4 = int(starting.pop())
-                                # ending4 = int(ending.pop())
-                                # while starting3 <= ending3:
-                                    # while starting4 <= ending4:
-                                        # ip = starting1 + '.' + starting2 + '.'
-                                        # ip += str(starting3) + '.'
-                                        # ip += str(starting4)
-                                        # unit = Unit(ip)
-                                        # globalUnitList.append(unit)
-                                        # starting4 += 1
-                                    # starting4 = 0
-                                    # starting3 += 1
-                            # else:
-                                # errorText = 'SCAN TOO LARGE'
-                        # else:
-                            # errorText = 'SCAN TOO LARGE'
-                    #else:
-                    #    errorText = 'INVALID IP'
                 elif result == 'startingIPInput':
                     selectedBox = 1
                 elif result == 'endingIPInput':
@@ -870,7 +796,7 @@ while running:
                     dialog.blit(FONT20.render('MAC:', 1, (0, 0, 0), (255, 255, 255)), (24, 24))
                     dialog.blit(FONT20.render('Name:', 1, (0, 0, 0), (255, 255, 255)), (24, 48))
                     if selectedIP != None:
-                        if selectedIP.mac != 'no' or selectedIP.mac != '(incomplete)':
+                        if selectedIP.mac != 'no' or not(selectedIP.mac.startswith('(')):
                             dialogMAC = selectedIP.mac
                         else:
                             dialogMAC = ''
@@ -898,11 +824,7 @@ while running:
                     globalUnitManager.pingAll()
             elif 404 <= mouse_x < 916:
                 if 44 <= mouse_y < 556:
-                    #if globalUnitList != []:
                         number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
-                        # wellthen = list(globalUnitList) 
-                        # if len(wellthen) > number:
-                            # maySelectedIP = wellthen.pop(number)
                         #TODO: fix this eventually
                         wellthen = list(globalUnitManager.unitList) 
                         if len(wellthen) > number:
@@ -994,7 +916,7 @@ while running:
     elementCount = 0
     ipCount = len(globalUnitManager.unitList)
     if ipCount != 0:
-        ipPower = 1
+        ipPower = 0
         while (1 << ipPower) < ipCount:
             ipPower += 1
         widthCount = 1 << (ipPower/2)
@@ -1019,7 +941,7 @@ while running:
                                      squareWidth - 5, squareHeight - 5)
             screen.fill((153, 153, 153), border_rect)
         if element.online:
-            if (element.mac == 'no' or element.mac == '(incomplete)') or not(searchMACToggle.toggled):
+            if (element.mac == 'no' or element.mac.startswith('(')) or not(searchMACToggle.toggled):
                 if element.dns == '' or element.dns == 'Not found':
                     color = (255, 255, 0)
                 else:
@@ -1027,7 +949,7 @@ while running:
             else:
                 color = (0, 255, 0)
         else:
-            if (element.mac == 'no' or element.mac == '(incomplete)') or not(searchMACToggle.toggled):
+            if (element.mac == 'no' or element.mac.startswith('(')) or not(searchMACToggle.toggled):
                 if element.dns == '' or element.dns == 'Not found':
                     color = (0, 0, 0)
                 else:
@@ -1036,7 +958,7 @@ while running:
                 color = (255, 0, 0)
             
         
-        if element.mac != 'no' and element.mac != '(incomplete)':
+        if element.mac != 'no' and not(element.mac.startswith('(')):
             for tracked in MACTracker.trackMACList:
                 if tracked.MAC == element.mac:
                     color = (0, 0, 255)
@@ -1055,7 +977,6 @@ while running:
     if selectedIP == None:
         if 404 <= mouse_x < 916:
             if 44 <= mouse_y < 556: # TODO: this needs to be fixed
-                #if globalUnitManager.unitList != []: 
                     number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
                     wellthen = list(globalUnitManager.unitList)
                     if len(wellthen) > number:
@@ -1121,12 +1042,9 @@ while running:
     endStep = time.time()
     stepLength = endStep - beginStep
     stepCount += 1
-    #print stepLength
     if stepLength < 1.0/fps:
         time.sleep(1.0/fps - stepLength)
-    #else:
-        #print "frame lag " + str((stepLength - 1.0/fps)*1000) + " ms"
-        #pass
 
 pygame.display.quit()
 pygame.quit()
+

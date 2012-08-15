@@ -16013,7 +16013,7 @@ DCDECA%%%split%%%Akyllor
 DCE2AC%%%split%%%Lumens Digital Optics Inc.
 DCE71C%%%split%%%AUG Elektronik GmbH
 DCF05D%%%split%%%Letta Teknoloji
-DCF858%%%split%%%Lorent Networks£¬ Inc.
+DCF858%%%split%%%Lorent Networks Inc.
 DCFAD5%%%split%%%STRONG Ges.m.b.H.
 E005C5%%%split%%%TP-LINK Technologies Co.,Ltd.
 E006E6%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
