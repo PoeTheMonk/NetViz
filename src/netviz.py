@@ -44,29 +44,67 @@ def MACToObj(mac, listToSearch):
             a = element
     return a
 
-def netVizPingArray(my_socket, unitlist, findingMac = False, findingDNS = False, ID = None):
+def netVizPingArray(my_socket, iplist, findingMac = False, findingDNS = False, ID = None):
     startTime = time.time()
+    print "Pinger start"
     if not(bool(ID)):
         ID = os.getpid() & 0xFFFF
     for i in range(2):
-        for unit in unitlist:
-            ping.netVizPing(my_socket, unit.ip, ID)
-            time.sleep(0.002)
+        for ip in iplist:
+            ping.netVizPing(my_socket, ip, ID)
+            time.sleep(0.001)
     my_socket.close()
+    print "Ping done, MAC next"
     pingTime = time.time()
+    ipLen = range(len(iplist))
+    macAnswer = range(len(iplist))
     if (findingMac):
-        for unit in unitlist:
-            unit.findmac()
-            time.sleep(0.002)
+        for i in ipLen:
+            tmp = findmac(iplist[i])
+            macAnswer[i] = tmp
+            pingMACLock.acquire()
+            pingMACStack.append([iplist[i], tmp])
+            pingMACLock.release()
+    print "MAC done, DNS next"
     macTime = time.time()
     if (findingDNS):
-        for unit in unitlist:
-            unit.findDNS()
-            time.sleep(0.002)
+        for i in ipLen:
+            if not(findingMac) or not(macAnswer[i].startswith('n') or macAnswer[i].startswith('(')): # assume that if no mac address, no dns)
+                tmp = findDNS(iplist[i])
+                pingDNSLock.acquire()
+                pingDNSStack.append([iplist[i], tmp])
+                pingDNSLock.release()
+    print "DNS Done"
     dnsTime = time.time()
     print(pingTime - startTime, macTime - pingTime, dnsTime - macTime)
     print('Pinger exited')
- 
+
+def findDNS(ip):
+    #if (os.name == 'nt'):
+    try:
+        result = socket.gethostbyaddr(ip)
+    except:
+        result = ("Not found", "", ip)
+    return result[0]
+
+def findmac(ip):
+    'Returns the MAC address (str) given an IP.'
+    if (os.name == 'nt'):
+        result = arp.arp_resolve(ip, 0)
+        result = arp.mac_straddr(result, 1, ":")
+        if (result == '00:00:00:00:00:00'):
+            #self.mac = 'no'
+            return 'no'
+        else:
+            #self.mac = result
+            return result
+    result = commands.getoutput('arp ' + ip)
+    result = result.split(' ')
+    if len(result) > 2:
+        result = result.pop(3) # if there is no MAC address, it will reply 'no'.
+        #self.mac = result
+        return result
+
 def findOwnIP():
 ##    if (os.name == "nt"):
 ##        ipconfig = winCommand("ipconfig")
@@ -114,20 +152,61 @@ def findNetworkBoundaries():
 def rfp(a, b, c, d):
     return pygame.Rect(a, b, c-a, d-b)
     
-def findMACOwner(dict, unit):
+def findMACOwner(owners, mac):
     owner = 'Not Found'
-    d = unit.mac
-    if d != 'no' and not(d.startswith('(')):
-        e = d.split(':')
-        e1 = e.pop(0)
-        e2 = e.pop(0)
-        e3 = e.pop(0)
-        f = e1 + ':' + e2 + ':' + e3
+    if mac != 'no' and not(mac.startswith('(')):
+        e = mac.split(':')
+        f = e[0] + ':' + e[1] + ':' + e[2]
         try:
-            owner = dict[f]
+            owner = owners[f]
         except KeyError:
             owner = 'Not Found'
-    unit.owner = owner
+    return owner
+    
+def getICMPSock():
+    ''' Gets raw socket (requires root) for sending ICMP pings '''
+    icmp = socket.getprotobyname("icmp")
+    try:
+        my_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)
+    except socket.error, (errno, msg):
+        if errno == 1:
+            # Operation not permitted
+            msg = msg + (
+                " - Note that ICMP messages can only be sent from processes"
+                " running as root."
+            )
+            raise socket.error(msg)
+        raise # raise the original error
+    return my_socket
+
+def listen(sock = None):
+    HOST = socket.gethostbyname(socket.gethostname())
+    if (sock):
+        s = sock
+    else:
+        s = getICMPSock()
+    s.bind((HOST, 0))
+    while icmpsRunning:
+        startedSelect = time.time()
+        whatReady = select.select([s], [], [], 5)
+        howLongInSelect = (time.time() - startedSelect)
+        if whatReady[0] == []: # Timeout
+            #print("timeout")
+            continue
+        frame, addr = s.recvfrom(8192)
+        TYPE = None
+        #ID = frame[24:26]
+        #SEQ = frame[26:28]
+        if (frame[20] == '\x00'): #Packet is response
+            TYPE = 'Ping response'
+        elif (frame[20] == '\x08'): #Packet is request
+            TYPE = 'Ping request'
+        if (TYPE != None):
+            pingIPLock.acquire()
+            pingIPStack.append(addr[0])
+            pingIPLock.release()
+    s.close()
+    print('ICMPS exited')
 
 class Button:
     def __init__(self, name, x, y, guyArray,
@@ -465,42 +544,11 @@ class Unit:
         self.ip = ip
         self.mac = '(Not Searched)'
         self.online = False
-        self.color = (0, 0, 0)
+        #self.color = (0, 0, 0)
         self.ownIP = False
         self.username = ''
         self.dns = ''
         self.owner = 'Not Found'
-
-    def findDNS(self):
-        ip = str(self.ip)
-        #if (os.name == 'nt'):
-        if (self.mac.startswith('n') or self.mac.startswith('(')): # assume that if no mac address, no dns)
-            self.dns = 'Not found'
-            return
-        try:
-            result = socket.gethostbyaddr(ip)
-        except:
-            result = ("Not found", "", ip)
-        self.dns = result[0]
-    
-    def findmac(self):
-        'Returns the MAC address (str) given an IP.'
-        if (os.name == 'nt'):
-            result = arp.arp_resolve(self.ip, 0)
-            result = arp.mac_straddr(result, 1, ":")
-            if (result == '00:00:00:00:00:00'):
-                self.mac = 'no'
-                return 'no'
-            else:
-                self.mac = result
-                return result
-        result = commands.getoutput('arp ' + self.ip)
-        result = result.split(' ')
-        if len(result) > 2:
-            result = result.pop(3) # if there is no MAC address, it will reply 'no'.
-            self.mac = result
-            return result
-            del result
 
 
 class UnitManager:
@@ -516,13 +564,15 @@ class UnitManager:
             dif[i] = endNum[i] - startNum[i] + 1
         tmp = list(startNum)
         self.unitList = range(dif[0] * dif[1] * dif[2] * dif[3])
+        self.ipList = list(self.unitList)
         while(tmp[0] <= endNum[0]):
             while(tmp[1] <= endNum[1]):
                 while(tmp[2] <= endNum[2]):
                     while(tmp[3] <= endNum[3]):
-                        self.unitList[(tmp[0] - startNum[0]) * dif[1] * dif[2] * dif[3] + (tmp[1] - startNum[1])
-                            * dif[2] * dif[3] + (tmp[2] - startNum[2]) * dif[3] + tmp[3] - startNum[3]] = Unit(
-                            str(tmp[0]) + '.' + str(tmp[1]) + '.' + str(tmp[2]) + '.' + str(tmp[3])) 
+                        index = ((tmp[0] - startNum[0]) * dif[1] * dif[2] * dif[3] + (tmp[1] - startNum[1])
+                            * dif[2] * dif[3] + (tmp[2] - startNum[2]) * dif[3] + tmp[3] - startNum[3])
+                        self.unitList[index] = Unit(str(tmp[0]) + '.' + str(tmp[1]) + '.' + str(tmp[2]) + '.' + str(tmp[3]))
+                        self.ipList[index] = str(tmp[0]) + '.' + str(tmp[1]) + '.' + str(tmp[2]) + '.' + str(tmp[3])
                         tmp[3] += 1
                     tmp[2] += 1
                     tmp[3] = startNum[3]
@@ -545,60 +595,12 @@ class UnitManager:
             * self.dif[2] * self.dif[3] + (tmpNum[2] - self.startNum[2]) * self.dif[3] + tmpNum[3] - self.startNum[3]]
 
     def pingAll(self):
-        pt = threading.Thread(target=netVizPingArray, name='Pinger', args=(ICMPS.getICMPSock(),
-            list(self.unitList), searchMACToggle.toggled, searchDNSToggle.toggled))
+        pt = threading.Thread(target=netVizPingArray, name='Pinger', args=(getICMPSock(),
+            list(self.ipList), searchMACToggle.toggled, searchDNSToggle.toggled))
         pt.setDaemon(True)
+        print "pt.start()"
         pt.start()
- 
-
-class ICMPServer:
-    def __init__(self):
-        self.s = None
-        
-    def getICMPSock(self):
-        ''' Gets raw socket (requires root) for sending ICMP pings '''
-        icmp = socket.getprotobyname("icmp")
-        try:
-            my_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)
-        except socket.error, (errno, msg):
-            if errno == 1:
-                # Operation not permitted
-                msg = msg + (
-                    " - Note that ICMP messages can only be sent from processes"
-                    " running as root."
-                )
-                raise socket.error(msg)
-            raise # raise the original error
-        return my_socket
-
-    def listen(self, sock = None):
-        HOST = socket.gethostbyname(socket.gethostname())
-        if (sock):
-            self.s = sock
-        else:
-            self.s = self.getICMPSock()
-        self.s.bind((HOST, 0))
-        while running:
-            startedSelect = time.time()
-            whatReady = select.select([self.s], [], [], 5)
-            howLongInSelect = (time.time() - startedSelect)
-            if whatReady[0] == []: # Timeout
-                #print("timeout")
-                continue
-            frame, addr = self.s.recvfrom(8192)
-            TYPE = None
-            #ID = frame[24:26]
-            #SEQ = frame[26:28]
-            if (frame[20] == '\x00'): #Packet is response
-                TYPE = 'Ping response'
-            elif (frame[20] == '\x08'): #Packet is request
-                TYPE = 'Ping request'
-            if (TYPE != None):
-                unit = globalUnitManager.getUnit(addr[0])
-                if (unit != None):
-                    unit.online = True
-        self.s.close()
-        print('ICMPS exited')
+        print "pt started"
 
 
 #-----Settings / Options-----#
@@ -611,8 +613,8 @@ mouse_y = 0
 
 #-----Global Important Stuff-----#
 running = 1
+icmpsRunning = 1
 globalUnitManager = UnitManager(findOwnIP(), findOwnIP())
-ICMPS = ICMPServer()
 guyArray = []
 displayIPStart = ''
 displayIPEnd = ''
@@ -624,6 +626,12 @@ dialogStatus = 0
 dialogArray = []
 errorText = ''
 sidebarSelected = False
+pingIPStack = []
+pingIPLock = threading.Lock()
+pingMACStack = []
+pingMACLock = threading.Lock()
+pingDNSStack = []
+pingDNSLock = threading.Lock()
 
 #-----Pre-Game Setup-----#
 screen = pygame.display.set_mode((width,height))
@@ -699,7 +707,8 @@ if wellthen != None:
 MACTracker = MACTrackRunner(MACs, FONT12)
 
 #-----ICMP Server-----#
-st = threading.Thread(target=ICMPS.listen, name='ICMPS')
+st = threading.Thread(target=listen, name='ICMPS')
+st.setDaemon(True)
 st.start()
 
 #-----Game Loop----#
@@ -724,8 +733,37 @@ while running:
             file.write(element.MAC + ', ' + element.name)
             if num != macLen:
                 file.write('\n')
+        icmpsRunning = 0
         running = 0
         break
+    
+    pingIPLock.acquire() # Receive pings from ICMPS
+    if (len(pingIPStack) > 0):
+        for u in pingIPStack:
+            unit = globalUnitManager.getUnit(u)
+            if (unit):
+                unit.online = True
+        pingIPStack = []
+    pingIPLock.release()
+    
+    pingMACLock.acquire()
+    if (len(pingMACStack) > 0):
+        for u in pingMACStack:
+            unit = globalUnitManager.getUnit(u[0])
+            if (unit):
+                unit.mac = u[1]
+                unit.owner = findMACOwner(MACOwners, u[1])
+        pingMACStack = []
+    pingMACLock.release()
+    
+    pingDNSLock.acquire()
+    if (len(pingDNSStack) > 0):
+        for u in pingDNSStack:
+            unit = globalUnitManager.getUnit(u[0])
+            if (unit):
+                unit.dns = u[1]
+        pingDNSStack = []
+    pingDNSLock.release()
     
     elementCount = 0
     ipCount = len(globalUnitManager.unitList)

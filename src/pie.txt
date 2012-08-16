@@ -106,7 +106,6 @@
 000069%%%split%%%CONCORD COMMUNICATIONS INC
 00006A%%%split%%%COMPUTER CONSOLES INC.
 00006B%%%split%%%SILICON GRAPHICS INC./MIPS
-00006C%%%split%%% 
 00006E%%%split%%%ARTISOFT, INC.
 00006F%%%split%%%Madge Ltd.
 000070%%%split%%%HCL LIMITED
@@ -162,7 +161,7 @@
 0000A2%%%split%%%BAY NETWORKS
 0000A3%%%split%%%NETWORK APPLICATION TECHNOLOGY
 0000A4%%%split%%%ACORN COMPUTERS LIMITED
-0000A5%%%split%%%Tattile SRL 
+0000A5%%%split%%%Tattile SRL
 0000A6%%%split%%%NETWORK GENERAL CORPORATION
 0000A7%%%split%%%NETWORK COMPUTING DEVICES INC.
 0000A8%%%split%%%STRATUS COMPUTER INC.
@@ -254,7 +253,6 @@
 0000FE%%%split%%%ANNAPOLIS MICRO SYSTEMS
 0000FF%%%split%%%CAMTEC ELECTRONICS LTD.
 000100%%%split%%%EQUIP'TRANS
-000101%%%split%%% 
 000103%%%split%%%3COM CORPORATION
 000104%%%split%%%DVICO Co., Ltd.
 000105%%%split%%%Beckhoff Automation GmbH
@@ -463,7 +461,7 @@
 0001CF%%%split%%%Alpha Data Parallel Systems, Ltd.
 0001D0%%%split%%%VitalPoint, Inc.
 0001D1%%%split%%%CoNet Communications, Inc.
-0001D2%%%split%%%inXtron, Inc. 
+0001D2%%%split%%%inXtron, Inc.
 0001D3%%%split%%%PAXCOMM, Inc.
 0001D4%%%split%%%Leisure Time, Inc.
 0001D5%%%split%%%HAEDONG INFO & COMM CO., LTD
@@ -1210,7 +1208,7 @@
 0004BA%%%split%%%KDD Media Will Corporation
 0004BB%%%split%%%Bardac Corporation
 0004BC%%%split%%%Giantec, Inc.
-0004BD%%%split%%%Motorola Mobility, Inc. 
+0004BD%%%split%%%Motorola Mobility, Inc.
 0004BE%%%split%%%OptXCon, Inc.
 0004BF%%%split%%%VersaLogic Corp.
 0004C0%%%split%%%Cisco Systems, Inc.
@@ -1356,7 +1354,6 @@
 00054C%%%split%%%RF Innovations Pty Ltd
 00054D%%%split%%%Brans Technologies, Inc.
 00054E%%%split%%%Philips
-00054F%%%split%%% 
 000551%%%split%%%F & S Elektronik Systeme GmbH
 000552%%%split%%%Xycotec Computer GmbH
 000553%%%split%%%DVC Company, Inc.
@@ -1396,7 +1393,6 @@
 000575%%%split%%%CDS-Electronics BV
 000576%%%split%%%NSM Technology Ltd.
 000577%%%split%%%SM Information & Communication
-000578%%%split%%% 
 00057A%%%split%%%Overture Networks
 00057B%%%split%%%Chung Nam Electronic Co., Ltd.
 00057C%%%split%%%RCO Security AB
@@ -1998,7 +1994,7 @@
 0007D0%%%split%%%Automat Engenharia de Automaoa Ltda.
 0007D1%%%split%%%Spectrum Signal Processing Inc.
 0007D2%%%split%%%Logopak Systeme
-0007D3%%%split%%%Stork Prints B.V. 
+0007D3%%%split%%%Stork Prints B.V.
 0007D4%%%split%%%Zhejiang Yutong Network Communication Co Ltd.
 0007D5%%%split%%%3e Technologies Int;., Inc.
 0007D6%%%split%%%Commil Ltd.
@@ -2057,7 +2053,7 @@
 00080B%%%split%%%Birka BPA Informationssystem AB
 00080C%%%split%%%VDA Elettronica spa
 00080D%%%split%%%Toshiba
-00080E%%%split%%%Motorola Mobility, Inc. 
+00080E%%%split%%%Motorola Mobility, Inc.
 00080F%%%split%%%Proximion Fiber Optics AB
 000810%%%split%%%Key Technology, Inc.
 000811%%%split%%%VOIX Corporation
@@ -2806,7 +2802,6 @@
 000B15%%%split%%%Platypus Technology
 000B16%%%split%%%Communication Machinery Corporation
 000B17%%%split%%%MKS Instruments
-000B18%%%split%%% 
 000B1A%%%split%%%Industrial Defender, Inc.
 000B1B%%%split%%%Systronix, Inc.
 000B1C%%%split%%%SIBCO bv
@@ -3025,7 +3020,6 @@
 000BF1%%%split%%%LAP Laser Applikations
 000BF2%%%split%%%Chih-Kan Technology Co., Ltd.
 000BF3%%%split%%%BAE SYSTEMS
-000BF4%%%split%%% 
 000BF6%%%split%%%Nitgen Co., Ltd
 000BF7%%%split%%%NIDEK CO.,LTD
 000BF8%%%split%%%Infinera
@@ -3073,7 +3067,7 @@
 000C22%%%split%%%Double D Electronics Ltd
 000C23%%%split%%%Beijing Lanchuan Tech. Co., Ltd.
 000C24%%%split%%%ANATOR
-000C25%%%split%%%Allied Telesis Labs, Inc. 
+000C25%%%split%%%Allied Telesis Labs, Inc.
 000C26%%%split%%%Weintek Labs. Inc.
 000C27%%%split%%%Sammy Corporation
 000C28%%%split%%%RIFATRON
@@ -3119,7 +3113,6 @@
 000C50%%%split%%%Seagate Technology
 000C51%%%split%%%Scientific Technologies Inc.
 000C52%%%split%%%Roll Systems Inc.
-000C53%%%split%%% 
 000C55%%%split%%%Microlink Communications Inc.
 000C56%%%split%%%Megatel Computer (1986) Corp.
 000C57%%%split%%%MACKIE Engineering Services Belgium BVBA
@@ -3133,7 +3126,7 @@
 000C5F%%%split%%%Avtec, Inc.
 000C60%%%split%%%ACM Systems
 000C61%%%split%%%AC Tech corporation DBA Advanced Digital
-000C62%%%split%%%ABB AB, Cewe-Control 
+000C62%%%split%%%ABB AB, Cewe-Control
 000C63%%%split%%%Zenith Electronics Corporation
 000C64%%%split%%%X2 MSA Group
 000C65%%%split%%%Sunin Telecom
@@ -3164,7 +3157,7 @@
 000C7E%%%split%%%Tellium Incorporated
 000C7F%%%split%%%synertronixx GmbH
 000C80%%%split%%%Opelcomm Inc.
-000C81%%%split%%%Schneider Electric (Australia) 
+000C81%%%split%%%Schneider Electric (Australia)
 000C82%%%split%%%NETWORK TECHNOLOGIES INC
 000C83%%%split%%%Logical Solutions
 000C84%%%split%%%Eazix, Inc.
@@ -3379,7 +3372,6 @@
 000D55%%%split%%%SANYCOM Technology Co.,Ltd
 000D56%%%split%%%Dell PCBA Test
 000D57%%%split%%%Fujitsu I-Network Systems Limited.
-000D58%%%split%%% 
 000D5A%%%split%%%Tiesse SpA
 000D5B%%%split%%%Smart Empire Investments Limited
 000D5C%%%split%%%Robert Bosch GmbH, VT-ATMO
@@ -3457,7 +3449,6 @@
 000DA4%%%split%%%DOSCH & AMAND SYSTEMS AG
 000DA5%%%split%%%Fabric7 Systems, Inc
 000DA6%%%split%%%Universal Switching Corporation
-000DA7%%%split%%% 
 000DA9%%%split%%%T.E.A.M. S.L.
 000DAA%%%split%%%S.A.Tehnology co.,Ltd.
 000DAB%%%split%%%Parker Hannifin GmbH Electromechanical Division Europe
@@ -3483,9 +3474,8 @@
 000DBF%%%split%%%TekTone Sound & Signal Mfg., Inc.
 000DC0%%%split%%%Spagat AS
 000DC1%%%split%%%SafeWeb Inc
-000DC2%%%split%%% 
 000DC4%%%split%%%Emcore Corporation
-000DC5%%%split%%%EchoStar Global B.V. 
+000DC5%%%split%%%EchoStar Global B.V.
 000DC6%%%split%%%DigiRose Technology Co., Ltd.
 000DC7%%%split%%%COSMIC ENGINEERING INC.
 000DC8%%%split%%%AirMagnet, Inc
@@ -3530,7 +3520,6 @@
 000DEF%%%split%%%Soc. Coop. Bilanciai
 000DF0%%%split%%%QCOM TECHNOLOGY INC.
 000DF1%%%split%%%IONIX INC.
-000DF2%%%split%%% 
 000DF4%%%split%%%Watertek Co.
 000DF5%%%split%%%Teletronics International Inc.
 000DF6%%%split%%%Technology Thesaurus Corp.
@@ -3566,7 +3555,6 @@
 000E14%%%split%%%Visionary Solutions, Inc.
 000E15%%%split%%%Tadlys LTD
 000E16%%%split%%%SouthWing S.L.
-000E17%%%split%%% 
 000E19%%%split%%%LogicaCMG Pty Ltd
 000E1A%%%split%%%JPS Communications
 000E1B%%%split%%%IAV GmbH
@@ -3576,14 +3564,12 @@
 000E1F%%%split%%%TCL Networks Equipment Co., Ltd.
 000E20%%%split%%%ACCESS Systems Americas, Inc.
 000E21%%%split%%%MTU Friedrichshafen GmbH
-000E22%%%split%%% 
 000E24%%%split%%%Huwell Technology Inc.
 000E25%%%split%%%Hannae Technology Co., Ltd
 000E26%%%split%%%Gincom Technology Corp.
 000E27%%%split%%%Crere Networks, Inc.
 000E28%%%split%%%Dynamic Ratings P/L
 000E29%%%split%%%Shester Communications Inc
-000E2A%%%split%%% 
 000E2C%%%split%%%Netcodec co.
 000E2D%%%split%%%Hyundai Digital Technology Co.,Ltd.
 000E2E%%%split%%%Edimax Technology Co., Ltd.
@@ -3779,7 +3765,6 @@
 000EEC%%%split%%%Orban
 000EED%%%split%%%Nokia Danmark A/S
 000EEE%%%split%%%Muco Industrie BV
-000EEF%%%split%%% 
 000EF1%%%split%%%EZQUEST INC.
 000EF2%%%split%%%Infinico Corporation
 000EF3%%%split%%%Smarthome
@@ -3804,7 +3789,6 @@
 000F06%%%split%%%Nortel Networks
 000F07%%%split%%%Mangrove Systems, Inc.
 000F08%%%split%%%Indagon Oy
-000F09%%%split%%% 
 000F0B%%%split%%%Kentima Technologies AB
 000F0C%%%split%%%SYNCHRONIC ENGINEERING
 000F0D%%%split%%%Hunt Electronic Co., Ltd.
@@ -3944,7 +3928,7 @@
 000F93%%%split%%%Landis+Gyr Ltd.
 000F94%%%split%%%Genexis
 000F95%%%split%%%ELECOM Co.,LTD Laneed Division
-000F96%%%split%%%Telco Systems, Inc. 
+000F96%%%split%%%Telco Systems, Inc.
 000F97%%%split%%%Avanex Corporation
 000F98%%%split%%%Avamax Co. Ltd.
 000F99%%%split%%%APAC opto Electronics Inc.
@@ -3973,7 +3957,7 @@
 000FB0%%%split%%%Compal Electronics,INC.
 000FB1%%%split%%%Cognio Inc.
 000FB2%%%split%%%Broadband Pacenet (India) Pvt. Ltd.
-000FB3%%%split%%%Actiontec Electronics, Inc 
+000FB3%%%split%%%Actiontec Electronics, Inc
 000FB4%%%split%%%Timespace Technology
 000FB5%%%split%%%NETGEAR Inc
 000FB6%%%split%%%Europlex Technologies
@@ -4252,7 +4236,7 @@
 0010C7%%%split%%%DATA TRANSMISSION NETWORK
 0010C8%%%split%%%COMMUNICATIONS ELECTRONICS SECURITY GROUP
 0010C9%%%split%%%MITSUBISHI ELECTRONICS LOGISTIC SUPPORT CO.
-0010CA%%%split%%%Telco Systems, Inc. 
+0010CA%%%split%%%Telco Systems, Inc.
 0010CB%%%split%%%FACIT K.K.
 0010CC%%%split%%%CLP COMPUTER LOGISTIK PLANUNG GmbH
 0010CD%%%split%%%INTERFACE CONCEPT
@@ -4598,7 +4582,7 @@
 001222%%%split%%%Skardin (UK) Ltd
 001223%%%split%%%Pixim
 001224%%%split%%%NexQL Corporation
-001225%%%split%%%Motorola Mobility, Inc. 
+001225%%%split%%%Motorola Mobility, Inc.
 001226%%%split%%%Japan Direx Corporation
 001227%%%split%%%Franklin Electric Co., Inc.
 001228%%%split%%%Data Ltd.
@@ -4699,7 +4683,7 @@
 001287%%%split%%%Digital Everywhere Unterhaltungselektronik GmbH
 001288%%%split%%%2Wire, Inc
 001289%%%split%%%Advance Sterilization Products
-00128A%%%split%%%Motorola Mobility, Inc. 
+00128A%%%split%%%Motorola Mobility, Inc.
 00128B%%%split%%%Sensory Networks Inc
 00128C%%%split%%%Woodward Governor
 00128D%%%split%%%STB Datenservice GmbH
@@ -4762,7 +4746,7 @@
 0012C6%%%split%%%TGC America, Inc
 0012C7%%%split%%%SECURAY Technologies Ltd.Co.
 0012C8%%%split%%%Perfect tech
-0012C9%%%split%%%Motorola Mobility, Inc. 
+0012C9%%%split%%%Motorola Mobility, Inc.
 0012CA%%%split%%%Mechatronic Brick Aps
 0012CB%%%split%%%CSS Inc.
 0012CC%%%split%%%Bitatek CO., LTD
@@ -4974,7 +4958,7 @@
 00139A%%%split%%%K-ubique ID Corp.
 00139B%%%split%%%ioIMAGE Ltd.
 00139C%%%split%%%Exavera Technologies, Inc.
-00139D%%%split%%%Marvell Hispana S.L. 
+00139D%%%split%%%Marvell Hispana S.L.
 00139E%%%split%%%Ciara Technologies Inc.
 00139F%%%split%%%Electronics Design Services, Co., Ltd.
 0013A0%%%split%%%ALGOSYSTEM Co., Ltd.
@@ -5227,7 +5211,7 @@
 001497%%%split%%%ZHIYUAN Eletronics co.,ltd.
 001498%%%split%%%Viking Design Technology
 001499%%%split%%%Helicomm Inc
-00149A%%%split%%%Motorola Mobility, Inc. 
+00149A%%%split%%%Motorola Mobility, Inc.
 00149B%%%split%%%Nokota Communications, LLC
 00149C%%%split%%%HF Company
 00149D%%%split%%%Sound ID Inc.
@@ -5334,7 +5318,7 @@
 001502%%%split%%%BETA tech
 001503%%%split%%%PROFIcomms s.r.o.
 001504%%%split%%%GAME PLUS CO., LTD.
-001505%%%split%%%Actiontec Electronics, Inc 
+001505%%%split%%%Actiontec Electronics, Inc
 001506%%%split%%%Neo Photonics
 001507%%%split%%%Renaissance Learning Inc
 001508%%%split%%%Global Target Enterprise Inc
@@ -5455,7 +5439,7 @@
 00157B%%%split%%%Leuze electronic GmbH + Co. KG
 00157C%%%split%%%Dave Networks, Inc.
 00157D%%%split%%%POSDATA CO., LTD.
-00157E%%%split%%%Weidmüller Interface GmbH & Co. KG   
+00157E%%%split%%%Weidmüller Interface GmbH & Co. KG  
 00157F%%%split%%%ChuanG International Holding CO.,LTD.
 001580%%%split%%%U-WAY CORPORATION
 001581%%%split%%%MAKUS Inc.
@@ -5665,7 +5649,7 @@
 00164D%%%split%%%Alcatel North America IP Division
 00164E%%%split%%%Nokia Danmark A/S
 00164F%%%split%%%World Ethnic Broadcastin Inc.
-001650%%%split%%%Herley General Microwave Israel. 
+001650%%%split%%%Herley General Microwave Israel.
 001651%%%split%%%Exeo Systems
 001652%%%split%%%Hoatech Technologies, Inc.
 001653%%%split%%%LEGO System A/S IE Electronics Division
@@ -5702,7 +5686,7 @@
 001672%%%split%%%Zenway enterprise ltd
 001673%%%split%%%Bury GmbH & Co. KG
 001674%%%split%%%EuroCB (Phils.), Inc.
-001675%%%split%%%Motorola Mobility, Inc. 
+001675%%%split%%%Motorola Mobility, Inc.
 001676%%%split%%%Intel Corporation
 001677%%%split%%%Bihl+Wiedemann GmbH
 001678%%%split%%%SHENZHEN BAOAN GAOKE ELECTRONICS CO., LTD
@@ -5765,7 +5749,6 @@
 0016B1%%%split%%%KBS
 0016B2%%%split%%%DriveCam Inc
 0016B3%%%split%%%Photonicbridges (China) Co., Ltd.
-0016B4%%%split%%% 
 0016B6%%%split%%%Cisco-Linksys
 0016B7%%%split%%%Seoul Commtech
 0016B8%%%split%%%Sony Ericsson Mobile Communications
@@ -5852,7 +5835,7 @@
 001709%%%split%%%Exalt Communications
 00170A%%%split%%%INEW DIGITAL COMPANY
 00170B%%%split%%%Contela, Inc.
-00170C%%%split%%%Twig Com Ltd. 
+00170C%%%split%%%Twig Com Ltd.
 00170D%%%split%%%Dust Networks Inc.
 00170E%%%split%%%Cisco Systems
 00170F%%%split%%%Cisco Systems
@@ -5893,7 +5876,6 @@
 001732%%%split%%%Science-Technical Center "RISSA"
 001733%%%split%%%SFR
 001734%%%split%%%ADC Telecommunications
-001735%%%split%%% 
 001737%%%split%%%Industrie Dial Face S.p.A.
 001738%%%split%%%International Business Machines
 001739%%%split%%%Bright Headphone Electronics Company
@@ -6065,7 +6047,7 @@
 0017DF%%%split%%%Cisco Systems
 0017E0%%%split%%%Cisco Systems
 0017E1%%%split%%%DACOS Technologies Co., Ltd.
-0017E2%%%split%%%Motorola Mobility, Inc. 
+0017E2%%%split%%%Motorola Mobility, Inc.
 0017E3%%%split%%%Texas Instruments
 0017E4%%%split%%%Texas Instruments
 0017E5%%%split%%%Texas Instruments
@@ -6096,7 +6078,7 @@
 0017FE%%%split%%%TALOS SYSTEM INC.
 0017FF%%%split%%%PLAYLINE Co.,Ltd.
 001800%%%split%%%UNIGRAND LTD
-001801%%%split%%%Actiontec Electronics, Inc 
+001801%%%split%%%Actiontec Electronics, Inc
 001802%%%split%%%Alpha Networks Inc.
 001803%%%split%%%ArcSoft Shanghai Co. LTD
 001804%%%split%%%E-TEK DIGITAL TECHNOLOGY LIMITED
@@ -6132,7 +6114,6 @@
 001822%%%split%%%CEC TELECOM CO.,LTD.
 001823%%%split%%%Delta Electronics, Inc.
 001824%%%split%%%Kimaldi Electronics, S.L.
-001825%%%split%%% 
 001827%%%split%%%NEC UNIFIED SOLUTIONS NEDERLAND B.V.
 001828%%%split%%%e2v technologies (UK) ltd.
 001829%%%split%%%Gatsometer
@@ -6394,7 +6375,7 @@
 001929%%%split%%%2M2B Montadora de Maquinas Bahia Brasil LTDA
 00192A%%%split%%%Antiope Associates
 00192B%%%split%%%Aclara RF Systems Inc.
-00192C%%%split%%%Motorola Mobility, Inc. 
+00192C%%%split%%%Motorola Mobility, Inc.
 00192D%%%split%%%Nokia Corporation
 00192E%%%split%%%Spectral Instruments, Inc.
 00192F%%%split%%%Cisco Systems
@@ -6516,7 +6497,7 @@
 0019A3%%%split%%%asteel electronique atlantique
 0019A4%%%split%%%Austar Technology (hang zhou) Co.,Ltd
 0019A5%%%split%%%RadarFind Corporation
-0019A6%%%split%%%Motorola Mobility, Inc. 
+0019A6%%%split%%%Motorola Mobility, Inc.
 0019A7%%%split%%%ITU-T
 0019A8%%%split%%%WiQuest Communications
 0019A9%%%split%%%Cisco Systems
@@ -6542,7 +6523,7 @@
 0019BD%%%split%%%New Media Life
 0019BE%%%split%%%Altai Technologies Limited
 0019BF%%%split%%%Citiway technology Co.,ltd
-0019C0%%%split%%%Motorola Mobility, Inc. 
+0019C0%%%split%%%Motorola Mobility, Inc.
 0019C1%%%split%%%Alps Electric Co., Ltd
 0019C2%%%split%%%Equustek Solutions, Inc.
 0019C3%%%split%%%Qualitrol
@@ -6633,7 +6614,7 @@
 001A18%%%split%%%Advanced Simulation Technology inc.
 001A19%%%split%%%Computer Engineering Limited
 001A1A%%%split%%%Gentex Corporation/Electro-Acoustic Products
-001A1B%%%split%%%Motorola Mobility, Inc. 
+001A1B%%%split%%%Motorola Mobility, Inc.
 001A1C%%%split%%%GT&T Engineering Pte Ltd
 001A1D%%%split%%%PChome Online Inc.
 001A1E%%%split%%%Aruba Networks
@@ -6708,7 +6689,7 @@
 001A63%%%split%%%Elster Solutions, LLC,
 001A64%%%split%%%IBM Corp
 001A65%%%split%%%Seluxit
-001A66%%%split%%%Motorola Mobility, Inc. 
+001A66%%%split%%%Motorola Mobility, Inc.
 001A67%%%split%%%Infinite QL Sdn Bhd
 001A68%%%split%%%Weltec Enterprise Co., Ltd.
 001A69%%%split%%%Wuhan Yangtze Optical Technology CO.,Ltd.
@@ -6725,7 +6706,7 @@
 001A74%%%split%%%Procare International Co
 001A75%%%split%%%Sony Ericsson Mobile Communications
 001A76%%%split%%%SDT information Technology Co.,LTD.
-001A77%%%split%%%Motorola Mobility, Inc. 
+001A77%%%split%%%Motorola Mobility, Inc.
 001A78%%%split%%%ubtos
 001A79%%%split%%%TELECOMUNICATION TECHNOLOGIES LTD.
 001A7A%%%split%%%Lismore Instruments Limited
@@ -6887,7 +6868,7 @@
 001B16%%%split%%%Celtro Ltd.
 001B17%%%split%%%Palo Alto Networks
 001B18%%%split%%%Tsuken Electric Ind. Co.,Ltd
-001B19%%%split%%%IEEE I&M Society TC9 
+001B19%%%split%%%IEEE I&M Society TC9
 001B1A%%%split%%%e-trees Japan, Inc.
 001B1B%%%split%%%Siemens AG,
 001B1C%%%split%%%Coherent
@@ -6944,7 +6925,7 @@
 001B4F%%%split%%%Avaya Inc.
 001B50%%%split%%%Nizhny Novgorod Factory named after M.Frunze, FSUE (NZiF)
 001B51%%%split%%%Vector Technology Corp.
-001B52%%%split%%%Motorola Mobility, Inc. 
+001B52%%%split%%%Motorola Mobility, Inc.
 001B53%%%split%%%Cisco Systems
 001B54%%%split%%%Cisco Systems
 001B55%%%split%%%Hurco Automation Ltd.
@@ -7083,7 +7064,7 @@
 001BDA%%%split%%%UTStarcom Inc
 001BDB%%%split%%%Valeo VECS
 001BDC%%%split%%%Vencer Co., Ltd.
-001BDD%%%split%%%Motorola Mobility, Inc. 
+001BDD%%%split%%%Motorola Mobility, Inc.
 001BDE%%%split%%%Renkus-Heinz, Inc.
 001BDF%%%split%%%Iskra MIS
 001BE0%%%split%%%TELENOT ELECTRONIC GmbH
@@ -7158,7 +7139,7 @@
 001C25%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 001C26%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 001C27%%%split%%%Sunell Electronics Co.
-001C28%%%split%%%Sphairon Technologies GmbH 
+001C28%%%split%%%Sphairon Technologies GmbH
 001C29%%%split%%%CORE DIGITAL ELECTRONICS CO., LTD
 001C2A%%%split%%%Envisacor Technologies Inc.
 001C2B%%%split%%%Alertme.com Limited
@@ -7311,7 +7292,7 @@
 001CBE%%%split%%%Nintendo Co., Ltd.
 001CBF%%%split%%%Intel Corporate
 001CC0%%%split%%%Intel Corporate
-001CC1%%%split%%%Motorola Mobility, Inc. 
+001CC1%%%split%%%Motorola Mobility, Inc.
 001CC2%%%split%%%Part II Research, Inc.
 001CC3%%%split%%%Pace plc
 001CC4%%%split%%%Hewlett-Packard Company
@@ -7409,7 +7390,7 @@
 001D20%%%split%%%COMTREND CO.
 001D21%%%split%%%Alcad SL
 001D22%%%split%%%Foss Analytical A/S
-001D23%%%split%%%SENSUS 
+001D23%%%split%%%SENSUS
 001D24%%%split%%%Aclara Power-Line Systems Inc.
 001D25%%%split%%%Samsung Electronics Co.,Ltd
 001D26%%%split%%%Rockridgesound Technology Co.
@@ -7564,7 +7545,7 @@
 001DBB%%%split%%%Dynamic System Electronics Corp.
 001DBC%%%split%%%Nintendo Co., Ltd.
 001DBD%%%split%%%Versamed Inc.
-001DBE%%%split%%%Motorola Mobility, Inc. 
+001DBE%%%split%%%Motorola Mobility, Inc.
 001DBF%%%split%%%Radiient Technologies, Inc.
 001DC0%%%split%%%Enphase Energy
 001DC1%%%split%%%Audinate Pty L
@@ -7760,7 +7741,7 @@
 001E7F%%%split%%%CBM of America
 001E80%%%split%%%Last Mile Ltd.
 001E81%%%split%%%CNB Technology Inc.
-001E82%%%split%%%SanDisk Corporation 
+001E82%%%split%%%SanDisk Corporation
 001E83%%%split%%%LAN/MAN Standards Association (LMSC)
 001E84%%%split%%%Pika Technologies Inc.
 001E85%%%split%%%Lagotek Corporation
@@ -7797,7 +7778,7 @@
 001EA4%%%split%%%Nokia Danmark A/S
 001EA5%%%split%%%ROBOTOUS, Inc.
 001EA6%%%split%%%Best IT World (India) Pvt. Ltd.
-001EA7%%%split%%%ActionTec Electronics, Inc 
+001EA7%%%split%%%ActionTec Electronics, Inc
 001EA8%%%split%%%Datang Mobile Communications Equipment CO.,LTD
 001EA9%%%split%%%Nintendo Co., Ltd.
 001EAA%%%split%%%E-Senza Technologies GmbH
@@ -8030,7 +8011,7 @@
 001F8D%%%split%%%Ingenieurbuero Stark GmbH und Ko. KG
 001F8E%%%split%%%Metris USA Inc.
 001F8F%%%split%%%Shanghai Bellmann Digital Source Co.,Ltd.
-001F90%%%split%%%Actiontec Electronics, Inc 
+001F90%%%split%%%Actiontec Electronics, Inc
 001F91%%%split%%%DBS Lodging Technologies, LLC
 001F92%%%split%%%VideoIQ, Inc.
 001F93%%%split%%%Xiotech Corporation
@@ -8082,7 +8063,7 @@
 001FC1%%%split%%%Hanlong Technology Co.,LTD
 001FC2%%%split%%%Jow Tong Technology Co Ltd
 001FC3%%%split%%%SmartSynch, Inc
-001FC4%%%split%%%Motorola Mobility, Inc. 
+001FC4%%%split%%%Motorola Mobility, Inc.
 001FC5%%%split%%%Nintendo Co., Ltd.
 001FC6%%%split%%%ASUSTek COMPUTER INC.
 001FC7%%%split%%%Casio Hitachi Mobile Comunications Co., Ltd.
@@ -8191,7 +8172,7 @@
 00202E%%%split%%%DAYSTAR DIGITAL
 00202F%%%split%%%ZETA COMMUNICATIONS, LTD.
 002030%%%split%%%ANALOG & DIGITAL SYSTEMS
-002031%%%split%%%Tattile SRL 
+002031%%%split%%%Tattile SRL
 002032%%%split%%%ALCATEL TAISEL
 002033%%%split%%%SYNAPSE TECHNOLOGIES, INC.
 002034%%%split%%%ROTEC INDUSTRIEAUTOMATION GMBH
@@ -8245,7 +8226,6 @@
 002064%%%split%%%PROTEC MICROSYSTEMS, INC.
 002065%%%split%%%SUPERNET NETWORKING INC.
 002066%%%split%%%GENERAL MAGIC, INC.
-002067%%%split%%% 
 002069%%%split%%%ISDN SYSTEMS CORPORATION
 00206A%%%split%%%OSAKA COMPUTER CORP.
 00206B%%%split%%%KONICA MINOLTA HOLDINGS, INC.
@@ -8320,7 +8300,7 @@
 0020B0%%%split%%%GATEWAY DEVICES, INC.
 0020B1%%%split%%%COMTECH RESEARCH INC.
 0020B2%%%split%%%GKD Gesellschaft Fur Kommunikation Und Datentechnik
-0020B3%%%split%%%Tattile SRL 
+0020B3%%%split%%%Tattile SRL
 0020B4%%%split%%%TERMA ELEKTRONIK AS
 0020B5%%%split%%%YASKAWA ELECTRIC CORPORATION
 0020B6%%%split%%%AGILE NETWORKS, INC.
@@ -8365,7 +8345,7 @@
 0020DD%%%split%%%Cybertec Pty Ltd
 0020DE%%%split%%%JAPAN DIGITAL LABORAT'Y CO.LTD
 0020DF%%%split%%%KYOSAN ELECTRIC MFG. CO., LTD.
-0020E0%%%split%%%Actiontec Electronics, Inc. 
+0020E0%%%split%%%Actiontec Electronics, Inc.
 0020E1%%%split%%%ALAMAR ELECTRONICS
 0020E2%%%split%%%INFORMATION RESOURCE ENGINEERING
 0020E3%%%split%%%MCD KENCOM CORPORATION
@@ -8383,7 +8363,7 @@
 0020EF%%%split%%%USC CORPORATION
 0020F0%%%split%%%UNIVERSAL MICROELECTRONICS CO.
 0020F1%%%split%%%ALTOS INDIA LIMITED
-0020F2%%%split%%%Oracle Corporation 
+0020F2%%%split%%%Oracle Corporation
 0020F3%%%split%%%RAYNET CORPORATION
 0020F4%%%split%%%SPECTRIX CORPORATION
 0020F5%%%split%%%PANDATEL AG
@@ -8681,12 +8661,11 @@
 002219%%%split%%%Dell Inc
 00221A%%%split%%%Audio Precision
 00221B%%%split%%%Morega Systems
-00221C%%%split%%% 
 00221E%%%split%%%Media Devices Co., Ltd.
 00221F%%%split%%%eSang Technologies Co., Ltd.
 002220%%%split%%%Mitac Technology Corp
 002221%%%split%%%ITOH DENKI CO,LTD.
-002222%%%split%%%Schaffner Deutschland GmbH 
+002222%%%split%%%Schaffner Deutschland GmbH
 002223%%%split%%%TimeKeeping Systems, Inc.
 002224%%%split%%%Good Will Instrument Co., Ltd.
 002225%%%split%%%Thales Avionics Ltd
@@ -8893,7 +8872,6 @@
 0022EE%%%split%%%Algo Communication Products Ltd
 0022EF%%%split%%%Ibis Tek, LLC
 0022F0%%%split%%%3 Greens Aviation Limited
-0022F1%%%split%%% 
 0022F3%%%split%%%SHARP CORPORATION
 0022F4%%%split%%%AMPAK Technology, Inc.
 0022F5%%%split%%%Advanced Realtime Tracking GmbH
@@ -8981,7 +8959,6 @@
 002347%%%split%%%ProCurve Networking by HP
 002348%%%split%%%SAGEM COMMUNICATION
 002349%%%split%%%Helmholtz Centre Berlin for Material and Energy
-00234A%%%split%%% 
 00234C%%%split%%%KTC AB
 00234D%%%split%%%Hon Hai Precision Ind. Co., Ltd.
 00234E%%%split%%%Hon Hai Precision Ind. Co., Ltd.
@@ -9046,7 +9023,6 @@
 002389%%%split%%%HANGZHOU H3C Technologies Co., Ltd.
 00238A%%%split%%%Ciena Corporation
 00238B%%%split%%%Quanta Computer Inc.
-00238C%%%split%%% 
 00238E%%%split%%%ADB Broadband Italia
 00238F%%%split%%%NIDEC COPAL CORPORATION
 002390%%%split%%%Algolware Corporation
@@ -9152,7 +9128,6 @@
 0023F4%%%split%%%Masternaut
 0023F5%%%split%%%WILO SE
 0023F6%%%split%%%Softwell Technology Co., Ltd.
-0023F7%%%split%%% 
 0023F9%%%split%%%Double-Take Software, INC.
 0023FA%%%split%%%RG Nets, Inc.
 0023FB%%%split%%%IP Datatel, Inc.
@@ -9185,7 +9160,6 @@
 002416%%%split%%%Any Use
 002417%%%split%%%Thomson Telecom Belgium
 002418%%%split%%%Nextwave Semiconductor
-002419%%%split%%% 
 00241B%%%split%%%iWOW Communications Pte Ltd
 00241C%%%split%%%FuGang Electronic (DG) Co.,Ltd
 00241D%%%split%%%GIGA-BYTE TECHNOLOGY CO.,LTD.
@@ -9279,7 +9253,7 @@
 002478%%%split%%%Mag Tech Electronics Co Limited
 002479%%%split%%%Optec Displays, Inc.
 00247A%%%split%%%FU YI CHENG Technology Co., Ltd.
-00247B%%%split%%%Actiontec Electronics, Inc 
+00247B%%%split%%%Actiontec Electronics, Inc
 00247C%%%split%%%Nokia Danmark A/S
 00247D%%%split%%%Nokia Danmark A/S
 00247E%%%split%%%Universal Global Scientific Industrial Co., Ltd
@@ -9407,7 +9381,6 @@
 0024F8%%%split%%%Technical Solutions Company Ltd.
 0024F9%%%split%%%Cisco Systems
 0024FA%%%split%%%Hilger u. Kern GMBH
-0024FB%%%split%%% 
 0024FD%%%split%%%Prosilient Technologies AB
 0024FE%%%split%%%AVM GmbH
 0024FF%%%split%%%QLogic Corporation
@@ -9566,7 +9539,6 @@
 00259A%%%split%%%CEStronics GmbH
 00259B%%%split%%%Beijing PKUNITY Microsystems Technology Co., Ltd
 00259C%%%split%%%Cisco-Linksys, LLC
-00259D%%%split%%% 
 00259F%%%split%%%TechnoDigital Technologies GmbH
 0025A0%%%split%%%Nintendo Co., Ltd.
 0025A1%%%split%%%Enalasys
@@ -9631,7 +9603,6 @@
 0025DC%%%split%%%Sumitomo Electric Networks, Inc
 0025DD%%%split%%%SUNNYTEK INFORMATION CO., LTD.
 0025DE%%%split%%%Probits Co., LTD.
-0025DF%%%split%%% 
 0025E1%%%split%%%SHANGHAI SEEYOO ELECTRONIC & TECHNOLOGY CO., LTD
 0025E2%%%split%%%Everspring Industry Co., Ltd.
 0025E3%%%split%%%Hanshinit Inc.
@@ -9758,7 +9729,7 @@
 00265F%%%split%%%Samsung Electronics Co.,Ltd
 002660%%%split%%%Logiways
 002661%%%split%%%Irumtek Co., Ltd.
-002662%%%split%%%Actiontec Electronics, Inc 
+002662%%%split%%%Actiontec Electronics, Inc
 002663%%%split%%%Shenzhen Huitaiwei Tech. Ltd, co.
 002664%%%split%%%Core System Japan
 002665%%%split%%%ProtectedLogic Corporation
@@ -9819,7 +9790,6 @@
 00269C%%%split%%%ITUS JAPAN CO. LTD
 00269D%%%split%%%M2Mnet Co., Ltd.
 00269E%%%split%%%Quanta Computer Inc
-00269F%%%split%%% 
 0026A1%%%split%%%Megger
 0026A2%%%split%%%Instrumentation Technology Systems
 0026A3%%%split%%%FQ Ingenieria Electronica S.A.
@@ -9843,7 +9813,7 @@
 0026B5%%%split%%%ICOMM Tele Ltd
 0026B6%%%split%%%Askey Computer
 0026B7%%%split%%%Kingston Technology Company, Inc.
-0026B8%%%split%%%Actiontec Electronics, Inc 
+0026B8%%%split%%%Actiontec Electronics, Inc
 0026B9%%%split%%%Dell Inc
 0026BA%%%split%%%Motorola Mobility, Inc.
 0026BB%%%split%%%Apple, Inc
@@ -9971,7 +9941,7 @@
 00300E%%%split%%%Klotz Digital AG
 00300F%%%split%%%IMT - Information Management T
 003010%%%split%%%VISIONETICS INTERNATIONAL
-003011%%%split%%%HMS Industrial Networks   
+003011%%%split%%%HMS Industrial Networks  
 003012%%%split%%%DIGITAL ENGINEERING LTD.
 003013%%%split%%%NEC Corporation
 003014%%%split%%%DIVIO, INC.
@@ -10343,7 +10313,7 @@
 004072%%%split%%%Applied Innovation Inc.
 004073%%%split%%%BASS ASSOCIATES
 004074%%%split%%%CABLE AND WIRELESS
-004075%%%split%%%Tattile SRL 
+004075%%%split%%%Tattile SRL
 004076%%%split%%%Sun Conversion Technologies
 004077%%%split%%%MAXTON TECHNOLOGY CORPORATION
 004078%%%split%%%WEARNES AUTOMATION PTE LTD
@@ -10368,7 +10338,7 @@
 00408B%%%split%%%RAYLAN CORPORATION
 00408C%%%split%%%AXIS COMMUNICATIONS AB
 00408D%%%split%%%THE GOODYEAR TIRE & RUBBER CO.
-00408E%%%split%%%Tattile SRL 
+00408E%%%split%%%Tattile SRL
 00408F%%%split%%%WM-DATA MINFO AB
 004090%%%split%%%ANSEL COMMUNICATIONS
 004091%%%split%%%PROCOMP INDUSTRIA ELETRONICA
@@ -10385,7 +10355,7 @@
 00409C%%%split%%%TRANSWARE
 00409D%%%split%%%DIGIBOARD, INC.
 00409E%%%split%%%CONCURRENT TECHNOLOGIES  LTD.
-00409F%%%split%%%Telco Systems, Inc. 
+00409F%%%split%%%Telco Systems, Inc.
 0040A0%%%split%%%GOLDSTAR CO., LTD.
 0040A1%%%split%%%ERGO COMPUTING
 0040A2%%%split%%%KINGSTAR TECHNOLOGY INC.
@@ -10439,7 +10409,7 @@
 0040D2%%%split%%%PAGINE CORPORATION
 0040D3%%%split%%%KIMPSION INTERNATIONAL CORP.
 0040D4%%%split%%%GAGE TALKER CORP.
-0040D5%%%split%%%Sartorius Mechatronics T&H GmbH 
+0040D5%%%split%%%Sartorius Mechatronics T&H GmbH
 0040D6%%%split%%%LOCAMATION B.V.
 0040D7%%%split%%%STUDIO GEN INC.
 0040D8%%%split%%%OCEAN OFFICE AUTOMATION LTD.
@@ -10486,7 +10456,7 @@
 004252%%%split%%%RLX Technologies
 0043FF%%%split%%%KETRON S.R.L.
 004501%%%split%%%Versus Technology, Inc.
-00464B%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD 
+00464B%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD
 005000%%%split%%%NEXO COMMUNICATIONS, INC.
 005001%%%split%%%YAMASHITA SYSTEMS CORP.
 005002%%%split%%%OMNISEC AG
@@ -10551,7 +10521,6 @@
 005044%%%split%%%ASACA CORPORATION
 005045%%%split%%%RIOWORKS SOLUTIONS, INC.
 005046%%%split%%%MENICX INTERNATIONAL CO., LTD.
-005047%%%split%%% 
 005049%%%split%%%Arbor Networks Inc
 00504A%%%split%%%ELTECO A.S.
 00504B%%%split%%%BARCONET N.V.
@@ -10598,7 +10567,6 @@
 005076%%%split%%%IBM Corp
 005077%%%split%%%PROLIFIC TECHNOLOGY, INC.
 005078%%%split%%%MEGATON HOUSE, LTD.
-005079%%%split%%% 
 00507B%%%split%%%MERLOT COMMUNICATIONS
 00507C%%%split%%%VIDEOCON AG
 00507D%%%split%%%IFP
@@ -10672,7 +10640,7 @@
 0050C4%%%split%%%IMD
 0050C5%%%split%%%ADS Technologies, Inc
 0050C6%%%split%%%LOOP TELECOMMUNICATION INTERNATIONAL, INC.
-0050C8%%%split%%% Addonics Technologies, Inc.
+0050C8%%%split%%%Addonics Technologies, Inc.
 0050C9%%%split%%%MASPRO DENKOH CORP.
 0050CA%%%split%%%NET TO NET TECHNOLOGIES
 0050CB%%%split%%%JETTER
@@ -10806,7 +10774,7 @@
 00604C%%%split%%%SAGEM COMMUNICATION
 00604D%%%split%%%MMC NETWORKS, INC.
 00604E%%%split%%%CYCLE COMPUTER CORPORATION, INC.
-00604F%%%split%%%Tattile SRL 
+00604F%%%split%%%Tattile SRL
 006050%%%split%%%INTERNIX INC.
 006051%%%split%%%QUALITY SEMICONDUCTOR
 006052%%%split%%%PERIPHERALS ENTERPRISE CO., Ltd.
@@ -10991,7 +10959,7 @@
 0070B0%%%split%%%M/A-COM INC. COMPANIES
 0070B3%%%split%%%DATA RECALL LTD.
 00789E%%%split%%%SAGEMCOM
-007F28%%%split%%%Actiontec Electronics, Inc 
+007F28%%%split%%%Actiontec Electronics, Inc
 008000%%%split%%%MULTITECH SYSTEMS, INC.
 008001%%%split%%%PERIPHONICS CORPORATION
 008002%%%split%%%SATELCOM (UK) LTD
@@ -11062,7 +11030,7 @@
 008043%%%split%%%NETWORLD, INC.
 008044%%%split%%%SYSTECH COMPUTER CORP.
 008045%%%split%%%MATSUSHITA ELECTRIC IND. CO
-008046%%%split%%%Tattile SRL 
+008046%%%split%%%Tattile SRL
 008047%%%split%%%IN-NET CORP.
 008048%%%split%%%COMPEX INCORPORATED
 008049%%%split%%%NISSIN ELECTRIC CO., LTD.
@@ -11092,7 +11060,7 @@
 008061%%%split%%%LITTON SYSTEMS, INC.
 008062%%%split%%%INTERFACE  CO.
 008063%%%split%%%Hirschmann Automation and Control GmbH
-008064%%%split%%%Tattile SRL 
+008064%%%split%%%Tattile SRL
 008065%%%split%%%CYBERGRAPHIC SYSTEMS PTY LTD.
 008066%%%split%%%ARCOM CONTROL SYSTEMS, LTD.
 008067%%%split%%%SQUARE D COMPANY
@@ -11154,7 +11122,7 @@
 00809F%%%split%%%ALCATEL BUSINESS SYSTEMS
 0080A0%%%split%%%EDISA HEWLETT PACKARD S/A
 0080A1%%%split%%%MICROTEST, INC.
-0080A2%%%split%%%Tattile SRL 
+0080A2%%%split%%%Tattile SRL
 0080A3%%%split%%%Lantronix
 0080A4%%%split%%%LIBERTY ELECTRONICS
 0080A5%%%split%%%SPEED INTERNATIONAL
@@ -11320,7 +11288,7 @@
 009040%%%split%%%Siemens Network Convergence LLC
 009041%%%split%%%APPLIED DIGITAL ACCESS
 009042%%%split%%%ECCS, Inc.
-009043%%%split%%%Tattile SRL 
+009043%%%split%%%Tattile SRL
 009044%%%split%%%ASSURED DIGITAL, INC.
 009045%%%split%%%Marconi Communications
 009046%%%split%%%DEXDYNE, LTD.
@@ -11392,7 +11360,7 @@
 009088%%%split%%%BAXALL SECURITY LTD.
 009089%%%split%%%SOFTCOM MICROSYSTEMS, INC.
 00908A%%%split%%%BAYLY COMMUNICATIONS, INC.
-00908B%%%split%%%Tattile SRL 
+00908B%%%split%%%Tattile SRL
 00908C%%%split%%%ETREND ELECTRONICS, INC.
 00908D%%%split%%%VICKERS ELECTRONICS SYSTEMS
 00908E%%%split%%%Nortel Networks Broadband Access
@@ -11533,7 +11501,7 @@
 00A00F%%%split%%%Broadband Technologies
 00A010%%%split%%%SYSLOGIC DATENTECHNIK AG
 00A011%%%split%%%MUTOH INDUSTRIES LTD.
-00A012%%%split%%%Telco Systems, Inc. 
+00A012%%%split%%%Telco Systems, Inc.
 00A013%%%split%%%TELTREND LTD.
 00A014%%%split%%%CSIR
 00A015%%%split%%%WYLE
@@ -11599,7 +11567,6 @@
 00A051%%%split%%%ANGIA COMMUNICATIONS. INC.
 00A052%%%split%%%STANILITE ELECTRONICS PTY. LTD
 00A053%%%split%%%COMPACT DEVICES, INC.
-00A054%%%split%%% 
 00A056%%%split%%%MICROPROSS
 00A057%%%split%%%LANCOM Systems GmbH
 00A058%%%split%%%GLORY, LTD.
@@ -11642,12 +11609,11 @@
 00A07D%%%split%%%SEEQ TECHNOLOGY, INC.
 00A07E%%%split%%%AVID TECHNOLOGY, INC.
 00A07F%%%split%%%GSM-SYNTEL, LTD.
-00A080%%%split%%%Tattile SRL 
+00A080%%%split%%%Tattile SRL
 00A081%%%split%%%ALCATEL DATA NETWORKS
 00A082%%%split%%%NKT ELEKTRONIK A/S
 00A083%%%split%%%ASIMMPHONY TURKEY
 00A084%%%split%%%Dataplex Pty Ltd
-00A085%%%split%%% 
 00A087%%%split%%%Zarlink Semiconductor Ltd.
 00A088%%%split%%%ESSENTIAL COMMUNICATIONS
 00A089%%%split%%%XPOINT TECHNOLOGIES, INC.
@@ -11775,7 +11741,7 @@
 00AA01%%%split%%%INTEL CORPORATION
 00AA02%%%split%%%INTEL CORPORATION
 00AA3C%%%split%%%OLIVETTI TELECOM SPA (OLTECO)
-00AA70%%%split%%%LG Electronics 
+00AA70%%%split%%%LG Electronics
 00B009%%%split%%%Grass Valley Group
 00B017%%%split%%%InfoGear Technology Corp.
 00B019%%%split%%%UTC CCS
@@ -12201,7 +12167,7 @@
 00D073%%%split%%%ACN ADVANCED COMMUNICATIONS
 00D074%%%split%%%TAQUA SYSTEMS, INC.
 00D075%%%split%%%ALARIS MEDICAL SYSTEMS, INC.
-00D076%%%split%%% Bank of America
+00D076%%%split%%%Bank of America
 00D077%%%split%%%LUCENT TECHNOLOGIES
 00D078%%%split%%%Eltex of Sweden AB
 00D079%%%split%%%CISCO SYSTEMS, INC.
@@ -12646,7 +12612,6 @@
 040CCE%%%split%%%Apple, Inc.
 040EC2%%%split%%%ViewSonic Mobile China Limited
 04180F%%%split%%%Samsung Electronics Co.,Ltd
-0418B6%%%split%%% 
 041D10%%%split%%%Dream Ware Inc.
 041E64%%%split%%%Apple, Inc
 04209A%%%split%%%Panasonic AVC Networks Company
@@ -12894,7 +12859,7 @@
 08D5C0%%%split%%%Seers Technology Co., Ltd
 08E672%%%split%%%JEBSEE ELECTRONICS CO.,LTD.
 08EA44%%%split%%%Aerohive Networks, Inc.
-08EDB9%%%split%%% Hon Hai Precision Ind. Co.,Ltd. 
+08EDB9%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 08F2F4%%%split%%%Net One Partners Co.,Ltd.
 08F6F8%%%split%%%GET Engineering
 08FAE0%%%split%%%Fohhn Audio AG
@@ -12909,7 +12874,7 @@
 0C3956%%%split%%%Observator instruments
 0C3C65%%%split%%%Dome Imaging Inc
 0C469D%%%split%%%MS Sedco
-0C4C39%%%split%%%Mitrastar Technology 
+0C4C39%%%split%%%Mitrastar Technology
 0C51F7%%%split%%%CHAUVIN ARNOUX
 0C565C%%%split%%%HyBroad Vision (Hong Kong) Technology Co Ltd
 0C57EB%%%split%%%Mueller Systems
@@ -12921,7 +12886,6 @@
 0C7523%%%split%%%BEIJING GEHUA CATV NETWORK CO.,LTD
 0C771A%%%split%%%Apple, Inc.
 0C7D7C%%%split%%%Kexiang Information Technology Co, Ltd.
-0C8112%%%split%%% 
 0C826A%%%split%%%Wuhan Huagong Genuine Optics Technology Co., Ltd
 0C8411%%%split%%%A.O. Smith Water Products
 0C8525%%%split%%%Cisco Systems
@@ -12962,7 +12926,6 @@
 0CF0B4%%%split%%%Globalsat International Technology Ltd
 0CF3EE%%%split%%%EM Microelectronic
 0CFC83%%%split%%%Airoha Technology Corp.,
-100000%%%split%%% 
 1000E8%%%split%%%NATIONAL SEMICONDUCTOR
 1000FD%%%split%%%LaonPeople
 10090C%%%split%%%Janome Sewing Machine Co., Ltd.
@@ -12977,12 +12940,12 @@
 10189E%%%split%%%Elmo Motion Control
 101B54%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD
 101DC0%%%split%%%Samsung Electronics Co.,Ltd
-101F74%%%split%%%Hewlett-Packard Company 
+101F74%%%split%%%Hewlett-Packard Company
 102D96%%%split%%%Looxcie Inc.
 102EAF%%%split%%%Texas Instruments
 103711%%%split%%%Simlink AS
 1040F3%%%split%%%Apple, Inc.
-104369%%%split%%%Soundmax Electronic Limited 
+104369%%%split%%%Soundmax Electronic Limited
 10445A%%%split%%%Shaanxi Hitech Electronic Co., LTD
 1045BE%%%split%%%Norphonic AS
 1045F8%%%split%%%LNT-Automation GmbH
@@ -13026,8 +12989,7 @@
 10F3DB%%%split%%%Gridco Systems, Inc.
 10F96F%%%split%%%LG Electronics
 10F9EE%%%split%%%Nokia Corporation
-10FC54%%%split%%%Shany Electronic Co., Ltd. 
-1100AA%%%split%%% 
+10FC54%%%split%%%Shany Electronic Co., Ltd.
 14144B%%%split%%%FUJIAN STAR-NET COMMUNICATION CO.,LTD
 141A51%%%split%%%Treetech Sistemas Digitais
 141BBD%%%split%%%Volex Inc.
@@ -13046,7 +13008,6 @@
 145A05%%%split%%%Apple, Inc.
 146308%%%split%%%JABIL CIRCUIT (SHANGHAI) LTD.
 146A0B%%%split%%%Cypress Electronics Limited
-146E0A%%%split%%% 
 147411%%%split%%%RIM
 147DB3%%%split%%%JOA TELECOM.CO.,LTD
 147DC5%%%split%%%Murata Manufacturing Co., Ltd.
@@ -13094,7 +13055,6 @@
 183BD2%%%split%%%BYD Precision Manufacture Company Ltd.
 183DA2%%%split%%%Intel Corporate
 183F47%%%split%%%Samsung Electronics Co.,Ltd
-18421D%%%split%%% 
 184617%%%split%%%Samsung Electronics
 1848D8%%%split%%%Fastback Networks
 184E94%%%split%%%MESSOA TECHNOLOGIES INC.
@@ -13104,11 +13064,11 @@
 186D99%%%split%%%Adanis Inc.
 187C81%%%split%%%Valeo Vision Systems
 1880CE%%%split%%%Barberry Solutions Ltd
-1880F5%%%split%%%Alcatel-Lucent Shanghai Bell Co., Ltd 
+1880F5%%%split%%%Alcatel-Lucent Shanghai Bell Co., Ltd
 18863A%%%split%%%DIGITAL ART SYSTEM
 1886AC%%%split%%%Nokia Danmark A/S
 188796%%%split%%%HTC Corporation
-188ED5%%%split%%%Philips Innovative Application NV 
+188ED5%%%split%%%Philips Innovative Application NV
 18922C%%%split%%%Virtual Instruments
 1897FF%%%split%%%TechFaith Wireless Technology Limited
 189A67%%%split%%%CSE-Servelec Limited
@@ -13139,7 +13099,7 @@
 1C0656%%%split%%%IDY Corporation
 1C0B52%%%split%%%EPICOM S.A
 1C0FCF%%%split%%%Sypro Optics GmbH
-1C129D%%%split%%%IEEE PES PSRC/SUB     
+1C129D%%%split%%%IEEE PES PSRC/SUB    
 1C1448%%%split%%%Motorola Mobility, Inc.
 1C17D3%%%split%%%Cisco Systems
 1C184A%%%split%%%ShenZhen RicherLink Technologies Co.,LTD
@@ -13164,8 +13124,8 @@
 1C69A5%%%split%%%Research In Motion
 1C6BCA%%%split%%%Mitsunami Co., Ltd.
 1C6F65%%%split%%%GIGA-BYTE TECHNOLOGY CO.,LTD.
-1C7508%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD. 
-1C7C11%%%split%%%EID 
+1C7508%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD.
+1C7C11%%%split%%%EID
 1C7C45%%%split%%%Vitek Industrial Video Products, Inc.
 1C7EE5%%%split%%%D-Link International
 1C83B0%%%split%%%Linked IP GmbH
@@ -13192,7 +13152,6 @@
 1CE192%%%split%%%Qisda Corporation
 1CE2CC%%%split%%%Texas Instruments
 1CF061%%%split%%%SCAPS GmbH
-1CF4CA%%%split%%% 
 1CFEA7%%%split%%%IDentytech Solutins Ltd.
 20014F%%%split%%%Linea Research Ltd
 2002AF%%%split%%%Murata Manufactuaring Co.,Ltd.
@@ -13218,14 +13177,13 @@
 204E7F%%%split%%%NETGEAR
 205476%%%split%%%Sony Mobile Communications AB
 2059A0%%%split%%%Paragon Technologies Inc.
-205B2A%%%split%%% 
 206432%%%split%%%SAMSUNG ELECTRO MECHANICS CO.,LTD.
 2067B1%%%split%%%Pluto inc.
 206A8A%%%split%%%Wistron InfoComm Manufacturing(Kunshan)Co.,Ltd.
 206AFF%%%split%%%Atlas Elektronik UK Limited
 206FEC%%%split%%%Braemac CA LLC
 2074CF%%%split%%%Shenzhen Voxtech Co.,Ltd
-207600%%%split%%%Actiontec Electronics, Inc 
+207600%%%split%%%Actiontec Electronics, Inc
 207C8F%%%split%%%Quanta Microsystems,Inc.
 208984%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD
 209BA5%%%split%%%JIAXING GLEAD Electronics Co.,Ltd
@@ -13257,7 +13215,7 @@
 20FEDB%%%split%%%M2M Solution S.A.S.
 240917%%%split%%%Devlin Electronics Limited
 240B2A%%%split%%%Viettel Group
-240BB1%%%split%%%KOSTAL Industrie Elektrik GmbH 
+240BB1%%%split%%%KOSTAL Industrie Elektrik GmbH
 241064%%%split%%%Shenzhen Ecsino Tecnical Co. Ltd
 241125%%%split%%%Hutek Co., Ltd.
 241A8C%%%split%%%Squarehead Technology AS
@@ -13293,14 +13251,13 @@
 24BBC1%%%split%%%Absolute Analysis
 24BC82%%%split%%%Dali Wireless, Inc.
 24BE05%%%split%%%Hewlett Packard
-24BF74%%%split%%% 
 24C86E%%%split%%%Chaney Instrument Co.
 24C9DE%%%split%%%Genoray
 24CBE7%%%split%%%MYK, Inc.
 24CF21%%%split%%%Shenzhen State Micro Technology Co., Ltd
 24D2CC%%%split%%%SmartDrive Systems Inc.
 24D921%%%split%%%Avaya, Inc
-24DAB6%%%split%%%Sistemas de Gestión Energética S.A. de C.V.
+24DAB6%%%split%%%Sistemas de Gestion Energetica S.A. de C.V.
 24DBAC%%%split%%%Huawei Device Co., Ltd
 24DBAD%%%split%%%ShopperTrak RCT Corporation
 24E6BA%%%split%%%JSC Zavod im. Kozitsky
@@ -13368,7 +13325,6 @@
 28E7CF%%%split%%%Apple, Inc.
 28ED58%%%split%%%JAG Jakob AG
 28EE2C%%%split%%%Frontline Test Equipment
-28EF01%%%split%%% 
 28F606%%%split%%%Syes srl
 28FBD3%%%split%%%Shanghai RagenTek Communication Technology Co.,Ltd.
 2C002C%%%split%%%UNOWHY
@@ -13388,7 +13344,7 @@
 2C3A28%%%split%%%Fagor Electrónica
 2C3F38%%%split%%%Cisco Systems
 2C3F3E%%%split%%%Alge-Timing GmbH
-2C4138%%%split%%%Hewlett-Packard Company 
+2C4138%%%split%%%Hewlett-Packard Company
 2C4401%%%split%%%Samsung Electronics Co.,Ltd
 2C542D%%%split%%%Cisco Systems
 2C625A%%%split%%%Finest Security Systems Co., Ltd
@@ -13448,7 +13404,7 @@
 30525A%%%split%%%NST Co., LTD
 3055ED%%%split%%%Trex Network LLC
 3057AC%%%split%%%IRLAB LTD.
-305D38%%%split%%%Beissbarth 
+305D38%%%split%%%Beissbarth
 306118%%%split%%%Paradom Inc.
 30688C%%%split%%%Reach Technology Inc.
 30694B%%%split%%%RIM
@@ -13530,13 +13486,13 @@
 34FC6F%%%split%%%ALCEA
 380197%%%split%%%Toshiba Samsung Storage Technolgoy Korea Corporation
 380A0A%%%split%%%Sky-City Communication and Electronics Limited Company
-380A94%%%split%%%Samsung Electronics Co.,Ltd 
+380A94%%%split%%%Samsung Electronics Co.,Ltd
 380DD4%%%split%%%Primax Electronics LTD.
 3816D1%%%split%%%Samsung Electronics Co.,Ltd
 381C4A%%%split%%%SIMCom Wireless Solutions Co.,Ltd.
 38229D%%%split%%%ADB Broadband Italia
 3822D6%%%split%%%H3C Technologies Co., Limited
-3826CD%%%split%%%ANDTEK  
+3826CD%%%split%%%ANDTEK 
 3828EA%%%split%%%Fujian Netcom Technology Co., LTD
 3831AC%%%split%%%WEG
 383F10%%%split%%%DBL Technology Ltd.
@@ -13546,7 +13502,7 @@
 38580C%%%split%%%Panaccess Systems GmbH
 3859F9%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 385FC3%%%split%%%Yu Jeong System, Co.Ltd
-386077%%%split%%%PEGATRON CORPORATION 
+386077%%%split%%%PEGATRON CORPORATION
 3863F6%%%split%%%3NOD MULTIMEDIA(SHENZHEN)CO.,LTD
 386BBB%%%split%%%Motorola Mobility, Inc.
 386E21%%%split%%%Wasion Group Ltd.
@@ -13575,12 +13531,12 @@
 38F8B7%%%split%%%V2COM PARTICIPACOES S.A.
 38FEC5%%%split%%%Ellips B.V.
 3C02B1%%%split%%%Creation Technologies LP
-3C04BF%%%split%%%PRAVIS SYSTEMS Co.Ltd., 
+3C04BF%%%split%%%PRAVIS SYSTEMS Co.Ltd.,
 3C05AB%%%split%%%Product Creation Studio
 3C0754%%%split%%%Apple, Inc.
 3C096D%%%split%%%Powerhouse Dynamics
 3C0FC1%%%split%%%KBC Networks
-3C106F%%%split%%%ALBAHITH TECHNOLOGIES 
+3C106F%%%split%%%ALBAHITH TECHNOLOGIES
 3C1915%%%split%%%GFI Chrono Time
 3C197D%%%split%%%Ericsson AB
 3C1A79%%%split%%%Huayuan Technology CO.,LTD
@@ -13621,7 +13577,6 @@
 3CA9F4%%%split%%%Intel Corporate
 3CB15B%%%split%%%Avaya, Inc
 3CB17F%%%split%%%Wattwatchers Pty Ld
-3CB87A%%%split%%% 
 3CBDD8%%%split%%%LG ELECTRONICS INC
 3CC0C6%%%split%%%d&amp;b audiotechnik GmbH
 3CC1F6%%%split%%%Melange Systems Pvt. Ltd.
@@ -13633,7 +13588,7 @@
 3CDF1E%%%split%%%Cisco Systems
 3CE5A6%%%split%%%Hangzhou H3C Technologies Co., Ltd.
 3CE5B4%%%split%%%KIDASEN INDUSTRIA E COMERCIO DE ANTENAS LTDA
-3CE624%%%split%%%LG Display 
+3CE624%%%split%%%LG Display
 3CEA4F%%%split%%%2Wire
 3CEAFB%%%split%%%NSE AG
 3CF392%%%split%%%Virtualtek. Co. Ltd
@@ -13681,7 +13636,7 @@
 408493%%%split%%%Clavister AB
 4088E0%%%split%%%Beijing Ereneben Information Technology Limited Shenzhen Branch
 408A9A%%%split%%%TITENG CO., Ltd.
-408B07%%%split%%%Actiontec Electronics, Inc 
+408B07%%%split%%%Actiontec Electronics, Inc
 408BF6%%%split%%%Shenzhen TCL New Technology Co; Ltd.
 409558%%%split%%%Aisino Corporation
 4097D1%%%split%%%BK Electronics cc
@@ -13693,7 +13648,7 @@
 40A6D9%%%split%%%Apple, Inc.
 40AC8D%%%split%%%Data Management, Inc.
 40B2C8%%%split%%%Nortel Networks
-40B3FC%%%split%%%Logital Co. Limited 
+40B3FC%%%split%%%Logital Co. Limited
 40B7F3%%%split%%%Motorola Mobility, Inc.
 40BA61%%%split%%%Arima Communications Corp.
 40BC8B%%%split%%%itelio GmbH
@@ -13815,9 +13770,8 @@
 48DF1C%%%split%%%Wuhan NEC Fibre Optic Communications industry Co. Ltd
 48E1AF%%%split%%%Vity
 48EA63%%%split%%%Zhejiang Uniview Technologies Co., Ltd.
-48EB30%%%split%%% ETERNA TECHNOLOGY, INC.
+48EB30%%%split%%%ETERNA TECHNOLOGY, INC.
 48ED80%%%split%%%daesung eltec
-48F317%%%split%%% 
 48F7F1%%%split%%%Alcatel-Lucent
 48F8E1%%%split%%%Alcatel Lucent WT
 48FCB8%%%split%%%Woodstream Corporation
@@ -13827,20 +13781,20 @@
 4C07C9%%%split%%%COMPUTER OFFICE Co.,Ltd.
 4C09B4%%%split%%%zte corporation
 4C0B3A%%%split%%%TCT Mobile Limited
-4C0F6E%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
-4C0FC7%%%split%%%Earda Electronics Co.,Ltd 
+4C0F6E%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
+4C0FC7%%%split%%%Earda Electronics Co.,Ltd
 4C1480%%%split%%%NOREGON SYSTEMS, INC
 4C17EB%%%split%%%SAGEMCOM
 4C1A3A%%%split%%%PRIMA Research And Production Enterprise Ltd.
 4C1FCC%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD
-4C2C80%%%split%%%Beijing Skyway Technologies Co.,Ltd 
+4C2C80%%%split%%%Beijing Skyway Technologies Co.,Ltd
 4C2F9D%%%split%%%ICM Controls
 4C3089%%%split%%%Thales Transportation Systems GmbH
 4C322D%%%split%%%TELEDATA NETWORKS
 4C32D9%%%split%%%M Rutty Holdings Pty. Ltd.
 4C3910%%%split%%%Newtek Electronics co., Ltd.
 4C3B74%%%split%%%VOGTEC(H.K.) Co., Ltd
-4C4B68%%%split%%%Mobile Device, Inc. 
+4C4B68%%%split%%%Mobile Device, Inc.
 4C5427%%%split%%%Linepro Sp. z o.o.
 4C5499%%%split%%%Huawei Device Co., Ltd
 4C5585%%%split%%%Hamilton Systems
@@ -13853,7 +13807,7 @@
 4C72B9%%%split%%%Pegatron Corporation
 4C7367%%%split%%%Genius Bytes Software Solutions GmbH
 4C73A5%%%split%%%KOVE
-4C774F%%%split%%%Embedded Wireless Labs 
+4C774F%%%split%%%Embedded Wireless Labs
 4C7897%%%split%%%Arrowhead Alarm Products Ltd
 4C8093%%%split%%%Intel Corporate
 4C8B55%%%split%%%Grupo Digicon
@@ -13863,7 +13817,7 @@
 4CA74B%%%split%%%Alcatel Lucent
 4CAA16%%%split%%%AzureWave Technologies (Shanghai) Inc.
 4CAC0A%%%split%%%ZTE Corporation
-4CB16C%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD 
+4CB16C%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD
 4CB199%%%split%%%Apple, Inc.
 4CB4EA%%%split%%%HRD (S) PTE., LTD.
 4CB9C8%%%split%%%CONET CO., LTD.
@@ -13895,7 +13849,7 @@
 505663%%%split%%%Texas Instruments
 5057A8%%%split%%%Cisco Systems
 506028%%%split%%%Xirrus Inc.
-506313%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+506313%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 506441%%%split%%%Greenlee
 5067F0%%%split%%%ZyXEL Communications Corporation
 506F9A%%%split%%%Wi-Fi Alliance
@@ -13939,7 +13893,7 @@
 5435DF%%%split%%%Symeo GmbH
 543968%%%split%%%Edgewater Networks Inc
 544249%%%split%%%Sony Corporation
-54466B%%%split%%%Shenzhen CZTIC Electronic Technology Co., Ltd  
+54466B%%%split%%%Shenzhen CZTIC Electronic Technology Co., Ltd 
 544A05%%%split%%%wenglor sensoric gmbh
 5453ED%%%split%%%Sony Corporation
 545EBD%%%split%%%NL Technologies
@@ -13996,7 +13950,6 @@
 58696C%%%split%%%Fujian Ruijie Networks co, ltd
 5869F9%%%split%%%Fusion Transactive Ltd.
 586D8F%%%split%%%Cisco-Linksys, LLC
-586ED6%%%split%%% 
 587675%%%split%%%Beijing ECHO Technologies Co.,Ltd
 587FC8%%%split%%%S2M
 58874C%%%split%%%LITE-ON CLEAN ENERGY TECHNOLOGY CORP.
@@ -14034,7 +13987,7 @@
 5C1437%%%split%%%Thyssenkrupp Aufzugswerke GmbH
 5C16C7%%%split%%%Big Switch Networks
 5C1737%%%split%%%I-View Now, LLC.
-5C17D3%%%split%%%LGE 
+5C17D3%%%split%%%LGE
 5C18B5%%%split%%%Talon Communications
 5C2479%%%split%%%Baltech AG
 5C260A%%%split%%%Dell Inc.
@@ -14051,7 +14004,7 @@
 5C5EAB%%%split%%%Juniper Networks
 5C63BF%%%split%%%TP-LINK TECHNOLOGIES CO., LTD.
 5C6984%%%split%%%NUVICO
-5C6A7D%%%split%%%KENTKART EGE ELEKTRONIK SAN. VE TIC. LTD. STI. 
+5C6A7D%%%split%%%KENTKART EGE ELEKTRONIK SAN. VE TIC. LTD. STI.
 5C6B32%%%split%%%Texas Instruments
 5C6D20%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 5C6F4F%%%split%%%S.A. SISTEL
@@ -14100,7 +14053,7 @@
 6044F5%%%split%%%Easy Digital Ltd.
 60455E%%%split%%%Liptel s.r.o.
 6045BD%%%split%%%Microsoft
-6052D0%%%split%%%FACTS Engineering 
+6052D0%%%split%%%FACTS Engineering
 605464%%%split%%%Eyedro Green Solutions Inc.
 6063FD%%%split%%%Transcend Communication Beijing Co.,Ltd.
 606720%%%split%%%Intel Corporate
@@ -14156,7 +14109,7 @@
 64200C%%%split%%%Apple, Inc.
 642216%%%split%%%Shandong Taixin Electronic co.,Ltd
 642400%%%split%%%Xorcom Ltd.
-642737%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+642737%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 642DB7%%%split%%%SEUNGIL ELECTRONICS
 643150%%%split%%%Hewlett-Packard Company
 64317E%%%split%%%Dexin Corporation
@@ -14171,7 +14124,7 @@
 645422%%%split%%%Equinox Payments
 645563%%%split%%%Intelight Inc.
 64557F%%%split%%%NSFOCUS Information Technology Co., Ltd.
-645DD7%%%split%%%Shenzhen Lifesense Medical Electronics Co., Ltd.    
+645DD7%%%split%%%Shenzhen Lifesense Medical Electronics Co., Ltd.   
 645EBE%%%split%%%Yahoo! JAPAN
 645FFF%%%split%%%Nicolet Neuro
 6465C0%%%split%%%Nuvon, Inc
@@ -14192,7 +14145,7 @@
 648125%%%split%%%Alphatron Marine BV
 648788%%%split%%%Juniper Networks
 6487D7%%%split%%%ADB Broadband Italia
-64995D%%%split%%%LGE 
+64995D%%%split%%%LGE
 649B24%%%split%%%V Technology Co., Ltd.
 649C8E%%%split%%%Texas Instruments
 649EF3%%%split%%%Cisco Systems
@@ -14302,7 +14255,7 @@
 6C5E7A%%%split%%%Ubiquitous Internet Telecom Co., Ltd
 6C626D%%%split%%%Micro-Star INT'L CO., LTD
 6C6F18%%%split%%%Stereotaxis, Inc.
-6C7039%%%split%%%Novar GmbH 
+6C7039%%%split%%%Novar GmbH
 6C81FE%%%split%%%Mitsuba Corporation
 6C8336%%%split%%%Samsung Electronics Co.,Ltd
 6C8CDB%%%split%%%Otus Technologies Ltd
@@ -14353,12 +14306,11 @@
 704AAE%%%split%%%Xstream Flow (Pty) Ltd
 705681%%%split%%%Apple Inc
 705812%%%split%%%Panasonic AVC Networks Company
-705AB6%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD. 
+705AB6%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD.
 705CAD%%%split%%%Konami Gaming Inc
 705EAA%%%split%%%Action Target, Inc.
 706417%%%split%%%ORBIS TECNOLOGIA ELECTRICA S.A.
 706582%%%split%%%Suzhou Hanming Technologies Co., Ltd.
-706F81%%%split%%% 
 7071BC%%%split%%%PEGATRON CORPORATION
 7072CF%%%split%%%EdgeCore Networks
 7073CB%%%split%%%Apple, Inc.
@@ -14415,14 +14367,14 @@
 7463DF%%%split%%%VTS GmbH
 7465D1%%%split%%%Atlinks
 746A89%%%split%%%Rezolt Corporation
-746B82%%%split%%%MOVEK 
+746B82%%%split%%%MOVEK
 7472F2%%%split%%%Chipsip Technology Co., Ltd.
 747818%%%split%%%ServiceAssure
 747B7A%%%split%%%ETH Inc.
 747DB6%%%split%%%Aliwei Communications, Inc
 747E1A%%%split%%%Red Embedded Design Limited
 747E2D%%%split%%%Beijing Thomson CITIC Digital Technology Co. LTD.
-74888B%%%split%%%ADB Broadband Italia 
+74888B%%%split%%%ADB Broadband Italia
 748EF8%%%split%%%Brocade Communications Systems, Inc.
 749050%%%split%%%Renesas Electronics Corporation
 74911A%%%split%%%Ruckus Wireless
@@ -14454,7 +14406,7 @@
 74F07D%%%split%%%BnCOM Co.,Ltd
 74F612%%%split%%%Motorola Mobility, Inc.
 74F726%%%split%%%Neuron Robotics
-74FDA0%%%split%%%Compupal (Group) Corporation 
+74FDA0%%%split%%%Compupal (Group) Corporation
 74FF7D%%%split%%%Wren Sound Systems, LLC
 78028F%%%split%%%Adaptive Spectrum and Signal Alignment (ASSIA), Inc.
 780738%%%split%%%Z.U.K. Elzab S.A.
@@ -14483,7 +14435,7 @@
 785712%%%split%%%Mobile Integration Workgroup
 78593E%%%split%%%RAFI GmbH & Co.KG
 785C72%%%split%%%Hioso Technology Co., Ltd.
-78617C%%%split%%%MITSUMI ELECTRIC CO.,LTD 
+78617C%%%split%%%MITSUMI ELECTRIC CO.,LTD
 7866AE%%%split%%%ZTEC Instruments, Inc.
 787F62%%%split%%%GiK mbH
 78818F%%%split%%%Server Racks Australia Pty Ltd
@@ -14493,7 +14445,7 @@
 788C54%%%split%%%Enkom Technologies Ltd.
 78929C%%%split%%%Intel Corporate
 78998F%%%split%%%MEDILINE ITALIA SRL
-78A051%%%split%%%iiNet Labs Pty Ltd 
+78A051%%%split%%%iiNet Labs Pty Ltd
 78A183%%%split%%%Advidia
 78A2A0%%%split%%%Nintendo Co., Ltd.
 78A3E4%%%split%%%Apple, Inc.
@@ -14507,7 +14459,7 @@
 78BAD0%%%split%%%Shinybow Technology Co. Ltd.
 78BEB6%%%split%%%Enhanced Vision
 78BEBD%%%split%%%STULZ GmbH
-78C40E%%%split%%%H&D Wireless 
+78C40E%%%split%%%H&D Wireless
 78C4AB%%%split%%%Shenzhen Runsil Technology Co.,Ltd
 78C5E5%%%split%%%Texas Instruments
 78C6BB%%%split%%%Innovasic, Inc.
@@ -14517,11 +14469,11 @@
 78D004%%%split%%%Neousys Technology Inc.
 78D34F%%%split%%%Pace-O-Matic, Inc.
 78D6F0%%%split%%%Samsung Electro Mechanics
-78DD08%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+78DD08%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 78DDD6%%%split%%%c-scape
 78DEE4%%%split%%%Texas Instruments
 78E3B5%%%split%%%Hewlett-Packard Company
-78E400%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+78E400%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 78E7D1%%%split%%%Hewlett-Packard Company
 78EC22%%%split%%%Shanghai Qihui Telecom Technology Co., LTD
 78EF4C%%%split%%%Unetconvergence Co., Ltd.
@@ -14596,7 +14548,7 @@
 7CF05F%%%split%%%Apple, Inc.
 7CF098%%%split%%%Bee Beans Technologies, Inc.
 7CF0BA%%%split%%%Linkwell Telesystems Pvt Ltd
-7CF429%%%split%%%NUUO Inc. 
+7CF429%%%split%%%NUUO Inc.
 7CFE28%%%split%%%Salutron Inc.
 80000B%%%split%%%Intel Corporate
 800010%%%split%%%ATT BELL LABORATORIES
@@ -14642,7 +14594,7 @@
 8096B1%%%split%%%Motorola Mobility
 80971B%%%split%%%Altenergy Power System,Inc.
 809B20%%%split%%%Intel Corporate
-80A1D7%%%split%%%Shanghai DareGlobal Technologies Co.,Ltd 
+80A1D7%%%split%%%Shanghai DareGlobal Technologies Co.,Ltd
 80AAA4%%%split%%%USAG
 80B289%%%split%%%Forworld Electronics Ltd.
 80B32A%%%split%%%Alstom Grid
@@ -14720,7 +14672,7 @@
 886B76%%%split%%%CHINA HOPEFUL GROUP HOPEFUL ELECTRIC CO.,LTD
 8886A0%%%split%%%Simton Technologies, Ltd.
 888717%%%split%%%CANON INC.
-888B5D%%%split%%%Storage Appliance Corporation 
+888B5D%%%split%%%Storage Appliance Corporation
 888C19%%%split%%%Brady Corp Asia Pacific Ltd
 8891DD%%%split%%%Racktivity
 8894F9%%%split%%%Gemicom Technology, Inc.
@@ -14730,7 +14682,7 @@
 889821%%%split%%%TERAON
 889FFA%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 88A5BD%%%split%%%QPCOM INC.
-88ACC1%%%split%%%Generiton Co., Ltd. 
+88ACC1%%%split%%%Generiton Co., Ltd.
 88AE1D%%%split%%%COMPAL INFORMATION(KUNSHAN)CO.,LTD
 88B168%%%split%%%Delta Control GmbH
 88B627%%%split%%%Gembird Europe BV
@@ -14751,7 +14703,7 @@
 88FD15%%%split%%%LINEEYE CO., LTD
 8C0CA3%%%split%%%Amper
 8C11CB%%%split%%%ABUS Security-Center GmbH & Co. KG
-8C1F94%%%split%%%RF Surgical System Inc. 
+8C1F94%%%split%%%RF Surgical System Inc.
 8C210A%%%split%%%TP-LINK TECHNOLOGIES CO., LTD.
 8C271D%%%split%%%QuantHouse
 8C278A%%%split%%%Vocollect Inc
@@ -14760,7 +14712,7 @@
 8C4DEA%%%split%%%Cerio Corporation
 8C5105%%%split%%%Shenzhen ireadygo Information Technology CO.,LTD.
 8C53F7%%%split%%%A&D ENGINEERING CO., LTD.
-8C541D%%%split%%%LGE 
+8C541D%%%split%%%LGE
 8C56C5%%%split%%%Nintendo Co., Ltd.
 8C57FD%%%split%%%LVX Western
 8C5877%%%split%%%Apple, Inc.
@@ -14781,7 +14733,6 @@
 8C7CFF%%%split%%%Brocade Communications Systems, Inc.
 8C7EB3%%%split%%%Lytro, Inc.
 8C82A8%%%split%%%Insigma Technology Co.,Ltd
-8C8401%%%split%%% 
 8C8A6E%%%split%%%ESTUN AUTOMATION TECHNOLOY CO., LTD
 8C8E76%%%split%%%taskit GmbH
 8C90D3%%%split%%%Alcatel Lucent
@@ -14802,7 +14753,6 @@
 8CDB25%%%split%%%ESG Solutions
 8CDD8D%%%split%%%Wifly-City System Inc.
 8CDE52%%%split%%%ISSC Technologies Corp.
-8CE748%%%split%%% 
 8CF9C9%%%split%%%MESADA Technology Co.,Ltd.
 8CFABA%%%split%%%Apple Inc
 8CFDF0%%%split%%%QUALCOMM Incorporated
@@ -14854,7 +14804,7 @@
 909DE0%%%split%%%Newland Design + Assoc. Inc.
 90A2DA%%%split%%%GHEO SA
 90A4DE%%%split%%%Wistron Neweb Corp.
-90A783%%%split%%%JSW PACIFIC CORPORATION 
+90A783%%%split%%%JSW PACIFIC CORPORATION
 90A7C1%%%split%%%Pakedge Device and Software Inc.
 90AC3F%%%split%%%BrightSign LLC
 90B134%%%split%%%Motorola Mobility, Inc.
@@ -14868,14 +14818,14 @@
 90D7EB%%%split%%%Texas Instruments
 90D852%%%split%%%Comtec Co., Ltd.
 90D92C%%%split%%%HUG-WITSCHI AG
-90E0F0%%%split%%%IEEE P1722 
+90E0F0%%%split%%%IEEE P1722
 90E2BA%%%split%%%Intel Corporation
 90E6BA%%%split%%%ASUSTek COMPUTER INC.
-90EA60%%%split%%%SPI Lasers Ltd 
+90EA60%%%split%%%SPI Lasers Ltd
 90F278%%%split%%%Radius Gateway
 90F4C1%%%split%%%Rand McNally
 90F652%%%split%%%TP-LINK TECHNOLOGIES CO., LTD.
-90F72F%%%split%%%Phillips Machine & Welding Co., Inc. 
+90F72F%%%split%%%Phillips Machine & Welding Co., Inc.
 90FB5B%%%split%%%Avaya, Inc
 90FBA6%%%split%%%Hon Hai Precision Ind.Co.Ltd
 940070%%%split%%%Nokia Corporation
@@ -14892,7 +14842,7 @@
 942E63%%%split%%%FinsÃ©cur
 94319B%%%split%%%Alphatronics BV
 9433DD%%%split%%%Taco Electronic Solutions, Inc.
-9439E5%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+9439E5%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 943AF0%%%split%%%Nokia Corporation
 944444%%%split%%%LG Innotek
 944452%%%split%%%Belkin International, Inc.
@@ -14935,14 +14885,13 @@
 94E848%%%split%%%FYLDE MICRO LTD
 94F692%%%split%%%Geminico co.,Ltd.
 94F720%%%split%%%Tianjin Deviser Electronics Instrument Co., Ltd
-94FAE8%%%split%%%Shenzhen Eycom Technology Co., Ltd 
+94FAE8%%%split%%%Shenzhen Eycom Technology Co., Ltd
 94FD1D%%%split%%%WhereWhen Corp
 94FEF4%%%split%%%SAGEMCOM
 980284%%%split%%%Theobroma Systems GmbH
 9803A0%%%split%%%ABB n.v. Power Quality Products
 9803D8%%%split%%%Apple, Inc.
 980C82%%%split%%%Samsung Electro Mechanics
-980EE4%%%split%%% 
 98291D%%%split%%%Jaguar de Mexico, SA de CV
 98293F%%%split%%%Fujian Start Computer Equipment Co.,Ltd
 982CBE%%%split%%%2Wire
@@ -14988,7 +14937,7 @@
 98FC11%%%split%%%Cisco-Linksys, LLC
 98FE03%%%split%%%Ericsson - North America
 9C0111%%%split%%%Shenzhen Newabel Electronic Co., Ltd.
-9C0298%%%split%%%Samsung Electronics Co.,Ltd 
+9C0298%%%split%%%Samsung Electronics Co.,Ltd
 9C066E%%%split%%%Hytera Communications Corporation Limited
 9C0DAC%%%split%%%Tymphany HK Limited
 9C1874%%%split%%%Nokia Danmark A/S
@@ -14997,7 +14946,7 @@
 9C220E%%%split%%%TASCAN Service GmbH
 9C28BF%%%split%%%Continental Automotive Czech Republic s.r.o.
 9C31B6%%%split%%%Kulite Semiconductor Products Inc
-9C417C%%%split%%%Hame  Technology Co.,  Limited 
+9C417C%%%split%%%Hame  Technology Co.,  Limited
 9C4563%%%split%%%DIMEP Sistemas
 9C4A7B%%%split%%%Nokia Corporation
 9C4CAE%%%split%%%Mesa Labs
@@ -15096,7 +15045,7 @@ A0B5DA%%%split%%%HongKong THTF Co., Ltd
 A0B662%%%split%%%Acutvista Innovation Co., Ltd.
 A0B9ED%%%split%%%Skytap
 A0BFA5%%%split%%%CORESYS
-A0C3DE%%%split%%% Triton Electronic Systems Ltd.
+A0C3DE%%%split%%%Triton Electronic Systems Ltd.
 A0CF5B%%%split%%%Cisco Systems
 A0DC04%%%split%%%Becker-Antriebe GmbH
 A0DDE5%%%split%%%SHARP CORPORATION
@@ -15106,7 +15055,7 @@ A0E295%%%split%%%DAT System Co.,Ltd
 A0E534%%%split%%%Stratec Biomedical AG
 A0E9DB%%%split%%%Ningbo FreeWings Technologies Co.,Ltd
 A0EF84%%%split%%%Seine Image Int'l Co., Ltd
-A0F217%%%split%%%GE Medical System(China) Co., Ltd. 
+A0F217%%%split%%%GE Medical System(China) Co., Ltd.
 A0F3C1%%%split%%%TP-LINK TECHNOLOGIES CO., LTD.
 A0F3E4%%%split%%%Alcatel -Lucent IPD
 A0F419%%%split%%%Nokia Corporation
@@ -15114,7 +15063,7 @@ A0F450%%%split%%%HTC Corporation
 A40130%%%split%%%ABIsystems Co., LTD
 A40BED%%%split%%%Carry Technology Co.,Ltd
 A40CC3%%%split%%%Cisco Systems
-A4134E%%%split%%%Luxul 
+A4134E%%%split%%%Luxul
 A41875%%%split%%%Cisco Systems
 A41BC0%%%split%%%Fastec Imaging Corporation
 A4218A%%%split%%%Nortel Networks
@@ -15160,7 +15109,7 @@ A4BADB%%%split%%%Dell Inc.
 A4BE61%%%split%%%EutroVision System, Inc.
 A4C0E1%%%split%%%Nintendo Co., Ltd.
 A4C2AB%%%split%%%Hangzhou LEAD-IT Information & Technology Co.,Ltd
-A4D18F%%%split%%%Shenzhen Skyee Optical Fiber Communication Technology Ltd. 
+A4D18F%%%split%%%Shenzhen Skyee Optical Fiber Communication Technology Ltd.
 A4D1D1%%%split%%%ECOtality North America
 A4D1D2%%%split%%%Apple, Inc.
 A4DA3F%%%split%%%Bionics Corp.
@@ -15170,7 +15119,7 @@ A4E32E%%%split%%%Silicon &amp; Software Systems Ltd.
 A4E391%%%split%%%DENY FONTAINE
 A4E731%%%split%%%Nokia Corporation
 A4E7E4%%%split%%%Connex GmbH
-A4ED4E%%%split%%%Motorola Mobility, Inc. 
+A4ED4E%%%split%%%Motorola Mobility, Inc.
 A4EE57%%%split%%%SEIKO EPSON CORPORATION
 A4EF52%%%split%%%Telewave Co., Ltd.
 A4F7D0%%%split%%%LAN Accessories Co., Ltd.
@@ -15180,7 +15129,7 @@ A81B18%%%split%%%XTS CORP
 A82066%%%split%%%Apple Inc
 A826D9%%%split%%%HTC Corporation
 A82BD6%%%split%%%Shina System Co., Ltd
-A83944%%%split%%%Actiontec Electronics, Inc 
+A83944%%%split%%%Actiontec Electronics, Inc
 A84041%%%split%%%Dragino Technology Co., Limited
 A849A5%%%split%%%Lisantech Co., Ltd.
 A854B2%%%split%%%Wistron Neweb Corp.
@@ -15204,7 +15153,7 @@ A893E6%%%split%%%JIANGXI JINGGANGSHAN CKING COMMUNICATION TECHNOLOGY CO.,LTD
 A898C6%%%split%%%Shinbo Co., Ltd.
 A8995C%%%split%%%aizo ag
 A89B10%%%split%%%inMotion Ltd.
-A8B0AE%%%split%%%LEONI 
+A8B0AE%%%split%%%LEONI
 A8B1D4%%%split%%%Cisco Systems
 A8BD1A%%%split%%%Honey Bee (Hong Kong) Limited
 A8C222%%%split%%%TM-Research Inc.
@@ -15241,7 +15190,7 @@ AC34CB%%%split%%%Shanhai GBCOM Communication Technology Co. Ltd
 AC3D05%%%split%%%Instorescreen Aisa
 AC3D75%%%split%%%HANGZHOU ZHIWAY TECHNOLOGIES CO.,LTD.
 AC3FA4%%%split%%%TAIYO YUDEN CO.,LTD
-AC40EA%%%split%%%C&T Solution Inc. 
+AC40EA%%%split%%%C&T Solution Inc.
 AC44F2%%%split%%%Revolabs Inc
 AC4723%%%split%%%Genelec
 AC4AFE%%%split%%%Hisense Broadband Multimedia Technology Co.,Ltd.
@@ -15282,7 +15231,7 @@ ACC2EC%%%split%%%CLT INT'L IND. CORP.
 ACC698%%%split%%%Kohzu Precision Co., Ltd.
 ACC935%%%split%%%Ness Corporation
 ACCA54%%%split%%%Telldus Technologies AB
-ACCABA%%%split%%%Midokura Co., Ltd. 
+ACCABA%%%split%%%Midokura Co., Ltd.
 ACCB09%%%split%%%Hefcom Metering (Pty) Ltd
 ACCC8E%%%split%%%Axis Communications AB
 ACCE8F%%%split%%%HWA YAO TECHNOLOGIES CO., LTD
@@ -15290,7 +15239,6 @@ ACCF23%%%split%%%Hi-flying electronics technology Co.,Ltd
 ACD180%%%split%%%Crexendo Business Solutions, Inc.
 ACD364%%%split%%%ABB SPA, ABB SACE DIV.
 ACD9D6%%%split%%%tci GmbH
-ACDE48%%%split%%% 
 ACE87B%%%split%%%Huawei Technologies Co., Ltd
 ACE9AA%%%split%%%Hay Systems Ltd
 ACEA6A%%%split%%%GENIX INFOCOMM CO., LTD.
@@ -15315,7 +15263,7 @@ B0750C%%%split%%%QA Cafe
 B075D5%%%split%%%ZTE Corporation
 B07D62%%%split%%%Dipl.-Ing. H. Horstmann GmbH
 B081D8%%%split%%%I-sys Corp
-B08991%%%split%%%LGE 
+B08991%%%split%%%LGE
 B08E1A%%%split%%%URadio Systems Co., Ltd
 B09074%%%split%%%Fulan Electronics Limited
 B09134%%%split%%%Taleo
@@ -15352,7 +15300,7 @@ B407F9%%%split%%%SAMSUNG ELECTRO-MECHANICS
 B40832%%%split%%%TC Communications
 B40B7A%%%split%%%Brusa Elektronik AG
 B40C25%%%split%%%Palo Alto Networks
-B40E96%%%split%%%HERAN 
+B40E96%%%split%%%HERAN
 B40EDC%%%split%%%LG-Ericsson Co.,Ltd.
 B41489%%%split%%%Cisco Systems
 B41DEF%%%split%%%Internet Laboratories, Inc.
@@ -15402,7 +15350,6 @@ B4CFDB%%%split%%%Shenzhen Jiuzhou Electric Co.,LTD
 B4D8A9%%%split%%%BetterBots
 B4D8DE%%%split%%%iota Computing, Inc.
 B4E0CD%%%split%%%IO Turbine, Inc.
-B4E1EB%%%split%%% 
 B4ED54%%%split%%%Wohler Technologies
 B4EED4%%%split%%%Texas Instruments
 B4F323%%%split%%%PETATEL INC.
@@ -15429,7 +15376,7 @@ B8621F%%%split%%%Cisco Systems
 B86491%%%split%%%CK Telecom Ltd
 B8653B%%%split%%%Bolymin, Inc.
 B86B23%%%split%%%Toshiba
-B870F4%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD. 
+B870F4%%%split%%%COMPAL INFORMATION (KUNSHAN) CO., LTD.
 B87424%%%split%%%Viessmann Elektronik GmbH
 B87447%%%split%%%Convergence Technologies
 B8797E%%%split%%%Secure Meters (UK) Limited
@@ -15543,12 +15490,11 @@ C01242%%%split%%%Alpha Security Products
 C0143D%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 C01885%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 C01E9B%%%split%%%Pixavi AS
-C02250%%%split%%% 
 C027B9%%%split%%%Beijing National Railway Research & Design Institute  of Signal & Communication
-C02973%%%split%%%Audyssey Laboratories Inc. 
+C02973%%%split%%%Audyssey Laboratories Inc.
 C029F3%%%split%%%XySystem
 C02BFC%%%split%%%iNES. applied informatics GmbH
-C02C7A%%%split%%%Shen Zhen Horn audio Co., Ltd. 
+C02C7A%%%split%%%Shen Zhen Horn audio Co., Ltd.
 C035BD%%%split%%%Velocytech Aps
 C038F9%%%split%%%Nokia Danmark A/S
 C03B8F%%%split%%%Minicom Digital Signage
@@ -15580,7 +15526,7 @@ C0BD42%%%split%%%ZPA Smart Energy a.s.
 C0C1C0%%%split%%%Cisco-Linksys, LLC
 C0C520%%%split%%%Ruckus Wireless
 C0C946%%%split%%%MITSUYA LABORATORIES INC.
-C0CB38%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+C0CB38%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 C0CFA3%%%split%%%Creative Electronics &amp; Software, Inc.
 C0D044%%%split%%%SAGEMCOM
 C0D962%%%split%%%Askey Computer Corp.
@@ -15608,7 +15554,7 @@ C4393A%%%split%%%SMC Networks Inc
 C43A9F%%%split%%%Siconix Inc.
 C43C3C%%%split%%%CYBELEC SA
 C43DC7%%%split%%%NETGEAR
-C44619%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+C44619%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 C44AD0%%%split%%%FIREFLIES RTLS
 C44B44%%%split%%%Omniprint Inc.
 C455A6%%%split%%%Cadac Holdings Ltd
@@ -15651,7 +15597,7 @@ C4FCE4%%%split%%%DishTV NZ Ltd
 C802A6%%%split%%%Beijing Newmine Technology
 C80718%%%split%%%TDSi
 C80AA9%%%split%%%Quanta Computer Inc.
-C80E77%%%split%%%Le Shi Zhi Xin Electronic Technology (Tianjin)  Co.,Ltd 
+C80E77%%%split%%%Le Shi Zhi Xin Electronic Technology (Tianjin)  Co.,Ltd
 C819F7%%%split%%%Samsung Electronics Co.,Ltd
 C81AFE%%%split%%%DLOGIC GmbH
 C81E8E%%%split%%%ADV Security (S) Pte Ltd
@@ -15678,7 +15624,7 @@ C86C87%%%split%%%Zyxel Communications Corp
 C86CB6%%%split%%%Optcom Co., Ltd.
 C87248%%%split%%%Aplicom Oy
 C87B5B%%%split%%%zte corporation
-C87CBC%%%split%%%Valink Co., Ltd. 
+C87CBC%%%split%%%Valink Co., Ltd.
 C87D77%%%split%%%Shenzhen Kingtech Communication Equipment Co.,Ltd
 C87E75%%%split%%%Samsung Electronics Co.,Ltd
 C88439%%%split%%%Sunrise Technologies
@@ -15698,7 +15644,6 @@ C8A620%%%split%%%Nebula, Inc
 C8A70A%%%split%%%Verizon Business
 C8A729%%%split%%%SYStronics Co., Ltd.
 C8AA21%%%split%%%Motorola Mobility, Inc.
-C8AACC%%%split%%% 
 C8AF40%%%split%%%marco Systemanalyse und Entwicklung GmbH
 C8BBD3%%%split%%%Embrane
 C8BCC8%%%split%%%Apple, Inc.
@@ -15714,7 +15659,7 @@ C8D719%%%split%%%Cisco Consumer Products, LLC
 C8DE51%%%split%%%Integra Networks, Inc.
 C8DF7C%%%split%%%Nokia Corporation
 C8EE08%%%split%%%TANGTOP TECHNOLOGY CO.,LTD
-C8EF2E%%%split%%%Beijing Gefei Tech. Co., Ltd 
+C8EF2E%%%split%%%Beijing Gefei Tech. Co., Ltd
 C8F406%%%split%%%Avaya, Inc
 C8F704%%%split%%%Building Block Video
 C8F733%%%split%%%Intel Corporate
@@ -15767,7 +15712,7 @@ CCC104%%%split%%%Applied Technical Systems
 CCC50A%%%split%%%SHENZHEN DAJIAHAO TECHNOLOGY CO.,LTD
 CCC62B%%%split%%%Tri-Systems Corporation
 CCC8D7%%%split%%%CIAS Elettronica srl
-CCCC4E%%%split%%%Sun Fountainhead USA. Corp 
+CCCC4E%%%split%%%Sun Fountainhead USA. Corp
 CCCC81%%%split%%%HUAWEI TECHNOLOGIES CO.,LTD
 CCCD64%%%split%%%SM-Electronic GmbH
 CCCE40%%%split%%%Janteq Corp
@@ -15789,7 +15734,7 @@ CCFE3C%%%split%%%Samsung Electronics
 D00790%%%split%%%Texas Instruments
 D0131E%%%split%%%Sunrex Technology Corp
 D0154A%%%split%%%zte corporation
-D0176A%%%split%%%Samsung Electronics Co.,Ltd  
+D0176A%%%split%%%Samsung Electronics Co.,Ltd 
 D01AA7%%%split%%%UniPrint
 D01CBB%%%split%%%Beijing Ctimes Digital Technology Co., Ltd.
 D023DB%%%split%%%Apple, Inc.
@@ -15884,7 +15829,7 @@ D49E6D%%%split%%%Wuhan Zhongyuan Huadian Science & Technology Co.,
 D4A02A%%%split%%%Cisco Systems
 D4A425%%%split%%%SMAX Technology Co., Ltd.
 D4A928%%%split%%%GreenWave Reality Inc
-D4AAFF%%%split%%%MICRO WORLD 
+D4AAFF%%%split%%%MICRO WORLD
 D4AE52%%%split%%%Dell Inc
 D4BED9%%%split%%%Dell Inc
 D4C1FC%%%split%%%Nokia Corporation
@@ -15976,7 +15921,7 @@ DC16A2%%%split%%%Medtronic Diabetes
 DC175A%%%split%%%Hitachi High-Technologies Corporation
 DC1D9F%%%split%%%U & B tech
 DC1EA3%%%split%%%Accensus LLC
-DC2008%%%split%%%ASD Electronics Ltd 
+DC2008%%%split%%%ASD Electronics Ltd
 DC2B61%%%split%%%Apple, Inc.
 DC2B66%%%split%%%Infoblock
 DC2C26%%%split%%%Iton Technology Limited
@@ -16031,7 +15976,7 @@ E02630%%%split%%%Intrigue Technologies, Inc.
 E02636%%%split%%%Nortel Networks
 E0271A%%%split%%%TTC Next-generation Home Network System WG
 E02A82%%%split%%%Universal Global Scientific Industrial Co., Ltd.
-E03005%%%split%%%Alcatel-Lucent Shanghai Bell Co., Ltd 
+E03005%%%split%%%Alcatel-Lucent Shanghai Bell Co., Ltd
 E039D7%%%split%%%Plexxi, Inc.
 E03C5B%%%split%%%SHENZHEN JIAXINJIE ELECTRON CO.,LTD
 E03E7D%%%split%%%data-complex GmbH
@@ -16067,7 +16012,6 @@ E0C922%%%split%%%Jireh Energy Tech., Ltd.
 E0C97A%%%split%%%Apple Inc
 E0CA4D%%%split%%%Shenzhen Unistar Communication Co.,LTD
 E0CA94%%%split%%%Askey Computer
-E0CB1D%%%split%%% 
 E0CF2D%%%split%%%Gemintek Corporation
 E0D10A%%%split%%%Katoudenkikougyousyo co ltd
 E0D7BA%%%split%%%Texas Instruments
@@ -16108,7 +16052,7 @@ E467BA%%%split%%%Danish Interpretation Systems A/S
 E46C21%%%split%%%messMa GmbH
 E47185%%%split%%%Securifi Ltd
 E4751E%%%split%%%Getinge Sterilization AB
-E477D4%%%split%%%Minrray Industry Co.,Ltd 
+E477D4%%%split%%%Minrray Industry Co.,Ltd
 E47CF9%%%split%%%Samsung Electronics Co., LTD
 E48399%%%split%%%Motorola Mobility, Inc.
 E48AD5%%%split%%%RF WINDOW CO., LTD.
@@ -16122,7 +16066,7 @@ E4B021%%%split%%%Samsung Electronics Co.,Ltd
 E4C6E6%%%split%%%Mophie, LLC
 E4C806%%%split%%%Ceiec Electric Technology Inc.
 E4CE8F%%%split%%%Apple, Inc.
-E4D53D%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+E4D53D%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 E4D71D%%%split%%%Oraya Therapeutics
 E4DD79%%%split%%%En-Vision America, Inc.
 E4E0C5%%%split%%%Samsung Electronics Co., LTD
@@ -16149,7 +16093,7 @@ E83A97%%%split%%%OCZ Technology Group
 E83EB6%%%split%%%RIM
 E83EFB%%%split%%%GEODESIC LTD.
 E84040%%%split%%%Cisco Systems
-E840F2%%%split%%%PEGATRON CORPORATION 
+E840F2%%%split%%%PEGATRON CORPORATION
 E843B6%%%split%%%QNAP Systems, Inc.
 E84E06%%%split%%%EDUP INTERNATIONAL (HK) CO., LTD
 E84ECE%%%split%%%Nintendo Co., Ltd.
@@ -16187,7 +16131,7 @@ E8DFF2%%%split%%%PRF Co., Ltd.
 E8E08F%%%split%%%GRAVOTECH MARKING SAS
 E8E0B7%%%split%%%Toshiba
 E8E1E2%%%split%%%Energotest
-E8E5D6%%%split%%%Samsung Electronics Co.,Ltd 
+E8E5D6%%%split%%%Samsung Electronics Co.,Ltd
 E8E732%%%split%%%Alcatel-Lucent
 E8E776%%%split%%%Shenzhen Kootion Technology Co., Ltd
 E8F1B0%%%split%%%SAGEMCOM SAS
@@ -16275,7 +16219,7 @@ F06281%%%split%%%ProCurve Networking by HP
 F065DD%%%split%%%Primax Electronics Ltd.
 F06853%%%split%%%Integrated Corporation
 F077D0%%%split%%%Xcellen
-F07BCB%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+F07BCB%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 F07D68%%%split%%%D-Link Corporation
 F081AF%%%split%%%IRZ AUTOMATION TECHNOLOGIES LTD
 F08BFE%%%split%%%COSTEL.,CO.LTD
@@ -16283,7 +16227,6 @@ F0933A%%%split%%%NxtConect
 F093C5%%%split%%%Garland Technology
 F09CBB%%%split%%%RaonThink Inc.
 F09CE9%%%split%%%Aerohive Networks Inc
-F0A225%%%split%%% 
 F0AD4E%%%split%%%Globalscale Technologies, Inc.
 F0AE51%%%split%%%Xi3 Corp
 F0B479%%%split%%%Apple, Inc.
@@ -16309,7 +16252,7 @@ F0E77E%%%split%%%Samsung Electronics Co.,Ltd
 F0EC39%%%split%%%Essec
 F0ED1E%%%split%%%Bilkon Bilgisayar Kontrollu Cih. Im.Ltd.
 F0EEBB%%%split%%%VIPAR GmbH
-F0F002%%%split%%%Hon Hai Precision Ind. Co.,Ltd. 
+F0F002%%%split%%%Hon Hai Precision Ind. Co.,Ltd.
 F0F755%%%split%%%Cisco Systems
 F0F7B3%%%split%%%Phorm
 F0F842%%%split%%%KEEBOX, Inc.
@@ -16341,7 +16284,7 @@ F4600D%%%split%%%Panoptic Technology, Inc
 F46349%%%split%%%Diffon Corporation
 F46D04%%%split%%%ASUSTek COMPUTER INC.
 F473CA%%%split%%%Conversion Sound Inc.
-F47626%%%split%%%Viltechmeda UAB 
+F47626%%%split%%%Viltechmeda UAB
 F47ACC%%%split%%%SolidFire, Inc.
 F47F35%%%split%%%Cisco Systems
 F48771%%%split%%%Infoblox
@@ -16399,7 +16342,7 @@ F88DEF%%%split%%%Tenebraex
 F88FCA%%%split%%%Google Fiber, Inc
 F8912A%%%split%%%GLP German Light Products GmbH
 F893F3%%%split%%%VOLANS
-F897CF%%%split%%% DAESHIN-INFORMATION TECHNOLOGY CO., LTD.  
+F897CF%%%split%%%DAESHIN-INFORMATION TECHNOLOGY CO., LTD. 
 F89955%%%split%%%Fortress Technology Inc
 F89D0D%%%split%%%Control Technology Inc.
 F8A03D%%%split%%%Dinstar Technologies Co., Ltd.
@@ -16414,7 +16357,7 @@ F8D0BD%%%split%%%Samsung Electronics Co.,Ltd
 F8D111%%%split%%%TP-LINK TECHNOLOGIES CO., LTD.
 F8D3A9%%%split%%%AXAN Networks
 F8D462%%%split%%%Pumatronix Equipamentos Eletronicos Ltda.
-F8D756%%%split%%%Simm Tronic Limited 
+F8D756%%%split%%%Simm Tronic Limited
 F8DAE2%%%split%%%Beta LaserMike
 F8DAF4%%%split%%%Taishan Online Technology Co., Ltd.
 F8DB4C%%%split%%%PNY Technologies, INC.
@@ -16429,11 +16372,11 @@ F8F7D3%%%split%%%International Communications Corporation
 F8F7FF%%%split%%%SYN-TECH SYSTEMS INC
 F8FB2F%%%split%%%Santur Corporation
 F8FE5C%%%split%%%Reciprocal Labs Corp
-FC0012%%%split%%%Toshiba Samsung Storage Technolgoy Korea Corporation 
+FC0012%%%split%%%Toshiba Samsung Storage Technolgoy Korea Corporation
 FC01CD%%%split%%%FUNDACION TEKNIKER
 FC0877%%%split%%%Prentke Romich Company
 FC0A81%%%split%%%Motorola Solutions Inc.
-FC0FE6%%%split%%%Sony Computer Entertainment Inc. 
+FC0FE6%%%split%%%Sony Computer Entertainment Inc.
 FC10BD%%%split%%%Control Sistematizado S.A.
 FC1794%%%split%%%InterCreative Co., Ltd
 FC1D59%%%split%%%I Smart Cities HK Ltd
