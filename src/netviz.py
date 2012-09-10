@@ -44,43 +44,66 @@ def MACToObj(mac, listToSearch):
             a = element
     return a
 
-def netVizPingArray(my_socket, iplist, findingMac = False, findingDNS = False, ID = None):
+def netVizPingArray(my_socket, iplist, findingMac = False, findingDNS = False, ID = None, sleeptime = None):
     startTime = time.time()
-    print "Pinger start"
     if not(bool(ID)):
         ID = os.getpid() & 0xFFFF
-    for i in range(2):
-        for ip in iplist:
-            ping.netVizPing(my_socket, ip, ID)
-            time.sleep(0.001)
-    my_socket.close()
-    print "Ping done, MAC next"
-    pingTime = time.time()
+    if not(bool(sleeptime)):
+        sleeptime = 0.002
     ipLen = range(len(iplist))
     macAnswer = range(len(iplist))
-    if (findingMac):
+    global pingProgress
+    global pingProgressMax
+    for ix in range(2):
         for i in ipLen:
-            tmp = findmac(iplist[i])
-            macAnswer[i] = tmp
-            pingMACLock.acquire()
-            pingMACStack.append([iplist[i], tmp])
-            pingMACLock.release()
-    print "MAC done, DNS next"
+            if (pingStopLock.acquire(True)):
+                if (pingStop == True):
+                    pingStopLock.release()
+                    pingProgressLock.acquire()
+                    pingProgress = 0
+                    pingProgressMax = 0
+                    pingProgressLock.release()
+                    return
+                pingStopLock.release()
+            ping.netVizPing(my_socket, iplist[i], ID)
+            time.sleep(0.005)
+            if findingMac:
+                tmp = findmac(iplist[i])
+                macAnswer[i] = tmp
+                pingMACLock.acquire()
+                pingMACStack.append([iplist[i], tmp])
+                pingMACLock.release()
+            pingProgressLock.acquire()
+            pingProgress = pingProgress + 1
+            pingProgressLock.release()
+            time.sleep(sleeptime)
+            if (i % 15 == 0):
+                time.sleep(0.1)
+    my_socket.close()
     macTime = time.time()
     if (findingDNS):
         for i in ipLen:
+            if (pingStopLock.acquire(True)):
+                if (pingStop == True):
+                    pingStopLock.release()
+                    pingProgressLock.acquire()
+                    pingProgress = 0
+                    pingProgressMax = 0
+                    pingProgressLock.release()
+                    return
+                pingStopLock.release()
             if not(findingMac) or not(macAnswer[i].startswith('n') or macAnswer[i].startswith('(')): # assume that if no mac address, no dns)
                 tmp = findDNS(iplist[i])
                 pingDNSLock.acquire()
                 pingDNSStack.append([iplist[i], tmp])
                 pingDNSLock.release()
-    print "DNS Done"
+            pingProgressLock.acquire()
+            pingProgress += 1
+            pingProgressLock.release()
     dnsTime = time.time()
-    print(pingTime - startTime, macTime - pingTime, dnsTime - macTime)
-    print('Pinger exited')
+    print(macTime - startTime, dnsTime - macTime)
 
 def findDNS(ip):
-    #if (os.name == 'nt'):
     try:
         result = socket.gethostbyaddr(ip)
     except:
@@ -93,24 +116,16 @@ def findmac(ip):
         result = arp.arp_resolve(ip, 0)
         result = arp.mac_straddr(result, 1, ":")
         if (result == '00:00:00:00:00:00'):
-            #self.mac = 'no'
             return 'no'
         else:
-            #self.mac = result
             return result
     result = commands.getoutput('arp ' + ip)
     result = result.split(' ')
     if len(result) > 2:
         result = result.pop(3) # if there is no MAC address, it will reply 'no'.
-        #self.mac = result
         return result
 
 def findOwnIP():
-##    if (os.name == "nt"):
-##        ipconfig = winCommand("ipconfig")
-##        iploc = ipconfig.find("IP Address")
-##        return ipconfig[iploc + 36:ipconfig.find("\r", iploc)]
-##    return commands.getoutput('ifconfig en1 | grep inet | grep -v inet6 | cut -d" " -f2')
     return socket.gethostbyname(socket.gethostname())
     
 def findNetworkBoundaries():
@@ -191,7 +206,6 @@ def listen(sock = None):
         whatReady = select.select([s], [], [], 5)
         howLongInSelect = (time.time() - startedSelect)
         if whatReady[0] == []: # Timeout
-            #print("timeout")
             continue
         frame, addr = s.recvfrom(8192)
         TYPE = None
@@ -454,7 +468,7 @@ class TrackedMAC:
     def __init__(self, MAC, name):
         self.MAC = MAC
         self.inRange = False
-        self.online = False
+        self.online = 0
         self.name = name
         self.ip = None
 
@@ -518,7 +532,11 @@ class MACTrackRunner:
         MACsSurf = pygame.Surface((340, len(self.trackMACList) * lineSize))
         for element in self.trackMACList:
             nameSurf = font.render(element.name, 1, (0, 0, 0), (255, 255, 255))
-            pingSurf = font.render(str(element.online), 1, (0, 0, 0), (255, 255, 255))
+            if element.online:
+                tmpptime = (beginStep - element.online)
+            else:
+                tmpptime = 0
+            pingSurf = font.render('{:.0f}'.format(tmpptime), 1, (0, 0, 0), (255, 255, 255))
             IPSurf = font.render(element.ip, 1, (0, 0, 0), (255, 255, 255))
             
             rect = pygame.Rect(0, index * lineSize, 328, lineSize)
@@ -543,7 +561,7 @@ class Unit:
     def __init__(self, ip):
         self.ip = ip
         self.mac = '(Not Searched)'
-        self.online = False
+        self.online = 0
         #self.color = (0, 0, 0)
         self.ownIP = False
         self.username = ''
@@ -594,13 +612,31 @@ class UnitManager:
         return self.unitList[(tmpNum[0] - self.startNum[0]) * self.dif[1] * self.dif[2] * self.dif[3] + (tmpNum[1] - self.startNum[1])
             * self.dif[2] * self.dif[3] + (tmpNum[2] - self.startNum[2]) * self.dif[3] + tmpNum[3] - self.startNum[3]]
 
-    def pingAll(self):
+    def pingAll(self, sleepytime = None):    
+        global pingProgress
+        global pingProgressMax
+        global pingStop
+        global pingTime
+        global pingTimeFirst
+        pingProgressLock.acquire()
+        if (pingProgress != 0 and pingProgress != pingProgressMax):
+            pingProgressLock.release()
+            return
+        pingProgressLock.release()
+        pingTime = time.time()
+        if not(pingTimeFirst):
+            pingTimeFirst = pingTime
+        pingProgressLock.acquire()
+        pingProgress = 0
+        pingProgressMax = len(self.ipList) * (2 + int(searchDNSToggle.toggled))
+        pingProgressLock.release()
+        pingStopLock.acquire()
+        pingStop = False
+        pingStopLock.release()
         pt = threading.Thread(target=netVizPingArray, name='Pinger', args=(getICMPSock(),
-            list(self.ipList), searchMACToggle.toggled, searchDNSToggle.toggled))
+            list(self.ipList), searchMACToggle.toggled, searchDNSToggle.toggled, None, sleepytime))
         pt.setDaemon(True)
-        print "pt.start()"
         pt.start()
-        print "pt started"
 
 
 #-----Settings / Options-----#
@@ -619,19 +655,26 @@ guyArray = []
 displayIPStart = ''
 displayIPEnd = ''
 selectedBox = None
-ownIP = ''
+ownIP = findOwnIP()
 selectedIP = None
 stepCount = 0
 dialogStatus = 0
 dialogArray = []
 errorText = ''
 sidebarSelected = False
+pingTime = 0
+pingTimeFirst = 0
 pingIPStack = []
 pingIPLock = threading.Lock()
 pingMACStack = []
 pingMACLock = threading.Lock()
 pingDNSStack = []
 pingDNSLock = threading.Lock()
+pingProgress = 0
+pingProgressMax = 0
+pingProgressLock = threading.Lock()
+pingStop = True
+pingStopLock = threading.Lock()
 
 #-----Pre-Game Setup-----#
 screen = pygame.display.set_mode((width,height))
@@ -672,6 +715,8 @@ trackSelectedItemButton = Button('trackSelectedItemButton', 24, 530, guyArray, t
 addItemByMACButton = Button('addItemByMACButton', 24, 554, guyArray, text='Add Item by MAC', textFont=FONT20,
                             style='rounded', color=(153, 153, 153), borderSize=1)
 refreshButton = Button('refreshButton', 240, 60, guyArray, height=60, width=60, image=RefreshImage)
+stopRefreshButton = Button('stopRefreshButton', 240, 122, guyArray, text='Stop Refresh', textFont=FONT20,
+                            style='rounded', color=(153, 153, 153), borderSize=1)
 
 #-----Set Up MAC Database-----#
 MACOwners = {}
@@ -719,7 +764,9 @@ while running:
         MACTracker.organize('name')
     
     # TODO: IP Constant update
-    
+    if (constantUpdateToggle.toggled):
+        if (stepCount % 60 == 0):
+            globalUnitManager.pingAll(0.1)
     
     #----Process Events----#
     event = pygame.event.poll()
@@ -742,7 +789,7 @@ while running:
         for u in pingIPStack:
             unit = globalUnitManager.getUnit(u)
             if (unit):
-                unit.online = True
+                unit.online = beginStep
         pingIPStack = []
     pingIPLock.release()
     
@@ -751,7 +798,8 @@ while running:
         for u in pingMACStack:
             unit = globalUnitManager.getUnit(u[0])
             if (unit):
-                unit.mac = u[1]
+                if (unit.mac == 'no' or unit.mac.startswith('(')):
+                    unit.mac = u[1]
                 unit.owner = findMACOwner(MACOwners, u[1])
         pingMACStack = []
     pingMACLock.release()
@@ -764,6 +812,12 @@ while running:
                 unit.dns = u[1]
         pingDNSStack = []
     pingDNSLock.release()
+    
+    pingProgressLock.acquire()
+    tProgress = pingProgress
+    tProgressTotal = pingProgressMax
+    pingProgressLock.release()
+    
     
     elementCount = 0
     ipCount = len(globalUnitManager.unitList)
@@ -860,6 +914,11 @@ while running:
                     selectedBox = 4
                 elif result == 'refreshButton':
                     globalUnitManager.pingAll()
+                elif result == 'stopRefreshButton':
+                    pingStopLock.acquire()
+                    pingStop = True
+                    pingStopLock.release()
+                    
             elif 404 <= mouse_x < 916:
                 if 44 <= mouse_y < 556:
                         number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
@@ -919,6 +978,7 @@ while running:
     if event.type == pygame.MOUSEMOTION:
         (mouse_x, mouse_y) = event.pos
         (movse_x, movse_y) = event.rel
+        pygame.display.set_caption('Netviz ' + str(mouse_x) + ', ' + str(mouse_y))
         if sidebarSelected:
             MACTracker.sliderPosition += movse_y
             if MACTracker.sliderPosition + MACTracker.sliderHeight > 248:
@@ -941,8 +1001,10 @@ while running:
         addItemByMACButton.draw(screen)
         constantUpdateToggle.draw(screen)
         refreshButton.draw(screen)
+        stopRefreshButton.draw(screen)
         netvizText = FONT40.render('netviz', 1, (0, 0, 0), (255, 255, 255))
         screen.blit(netvizText, (195, 533))
+        screen.blit(FONT12.render(str(tProgress) + ' out of ' + str(tProgressTotal), True, (0, 0, 0), (255, 255, 255)), (384, 24))
         if errorText != '':
             errorSurf = FONT20.render(errorText, 1, (255, 0, 0), (255, 255, 255))
             screen.blit(errorSurf, (120, 24))
@@ -967,6 +1029,7 @@ while running:
             sub = 0
     
     for element in globalUnitManager.unitList:
+        r, g, b = 0, 0, 0
         element_x = elementCount % widthCount
         element_y = elementCount / widthCount
         inset_rect = pygame.Rect(405 + squareWidth*element_x,
@@ -979,32 +1042,24 @@ while running:
                                      squareWidth - 5, squareHeight - 5)
             screen.fill((153, 153, 153), border_rect)
         if element.online:
-            if (element.mac == 'no' or element.mac.startswith('(')) or not(searchMACToggle.toggled):
-                if element.dns == '' or element.dns == 'Not found':
-                    color = (255, 255, 0)
-                else:
-                    color = (0, 255, 0)
-            else:
-                color = (0, 255, 0)
-        else:
-            if (element.mac == 'no' or element.mac.startswith('(')) or not(searchMACToggle.toggled):
-                if element.dns == '' or element.dns == 'Not found':
-                    color = (0, 0, 0)
-                else:
-                    color = (255, 0, 0)
-            else:
-                color = (255, 0, 0)
-            
+            r = 255
+            g = 255
+        if not(element.mac == 'no' or element.mac.startswith('(')):
+            r ^= 255
+        if not(element.dns == '' or element.dns == 'Not found'):
+            g ^= 127
+            b = 128
         
         if element.mac != 'no' and not(element.mac.startswith('(')):
             for tracked in MACTracker.trackMACList:
                 if tracked.MAC == element.mac:
-                    color = (0, 0, 255)
+                    b |= 255
                     tracked.ip = element.ip
                     tracked.online = element.online
                     tracked.inRange = True
                     element.username = tracked.name
         
+        color = (r,g,b)
         
         if element.ip == ownIP:
             color = (255, 255, 255)
@@ -1014,18 +1069,24 @@ while running:
     
     if selectedIP == None:
         if 404 <= mouse_x < 916:
-            if 44 <= mouse_y < 556: # TODO: this needs to be fixed
+            if 44 <= mouse_y < 556: 
                     number = (mouse_y - 44) / squareHeight * widthCount + (mouse_x - 404) / squareWidth
                     wellthen = list(globalUnitManager.unitList)
                     if len(wellthen) > number:
                         mouseoverIP = wellthen.pop(number)
-                        firstLine = 'IP: ' + mouseoverIP.ip + ' (' + mouseoverIP.username + ')'
+                        firstLine = 'IP: ' + mouseoverIP.ip
+                        if mouseoverIP.username != '':
+                            firstLine += ' (' + mouseoverIP.username + ')'
                         if searchMACToggle.toggled:
                             macsurf = FONT20.render('MAC: ' + mouseoverIP.mac + ' (' + mouseoverIP.owner[:24] + ')', 1, (0, 0, 0), (255, 255, 255))
                         elif not(searchMACToggle.toggled):
                             macsurf = FONT20.render('MAC lookup is off', 1, (0, 0, 0), (255, 255, 255))
                         IPsurf = FONT20.render(firstLine, 1, (0, 0, 0), (255, 255, 255))
-                        pingSurf = FONT20.render('Ping: ' + str(mouseoverIP.online), 1, (0, 0, 0), (255, 255, 255))
+                        if mouseoverIP.online:
+                            tmpptime = (beginStep - mouseoverIP.online)
+                        else:
+                            tmpptime = 0
+                        pingSurf = FONT20.render('Ping: {:.0f}'.format(tmpptime), 1, (0, 0, 0), (255, 255, 255))
                         if searchDNSToggle.toggled:
                             dnssurf = FONT20.render('Server Name: ' + mouseoverIP.dns[:35], 1, (0, 0, 0), (255, 255, 255))
                         elif not(searchDNSToggle.toggled):
@@ -1037,13 +1098,19 @@ while running:
                         screen.blit(dnssurf, (24, 206))
     else:
         mouseoverIP = selectedIP
-        firstLine = 'IP: ' + mouseoverIP.ip + ' (' + mouseoverIP.username + ')'
+        firstLine = 'IP: ' + mouseoverIP.ip
+        if mouseoverIP.username != '':
+            firstLine += ' (' + mouseoverIP.username + ')'
         if searchMACToggle.toggled:
             macsurf = FONT20.render('MAC: ' + mouseoverIP.mac + ' (' + mouseoverIP.owner[:24] + ')', 1, (0, 0, 0), (255, 255, 255))
         elif not(searchMACToggle.toggled):
             macsurf = FONT20.render('MAC lookup is off', 1, (0, 0, 0), (255, 255, 255))
         IPsurf = FONT20.render(firstLine, 1, (0, 0, 0), (255, 255, 255))
-        pingSurf = FONT20.render('Ping: ' + str(mouseoverIP.online), 1, (0, 0, 0), (255, 255, 255))
+        if mouseoverIP.online:
+            tmpptime = (beginStep - mouseoverIP.online)
+        else:
+            tmpptime = 0
+        pingSurf = FONT20.render('Ping: {:.0f}'.format(tmpptime), 1, (0, 0, 0), (255, 255, 255))
         if searchDNSToggle.toggled:
             dnssurf = FONT20.render('Server Name: ' + mouseoverIP.dns[:35], 1, (0, 0, 0), (255, 255, 255))
         elif not(searchDNSToggle.toggled):
