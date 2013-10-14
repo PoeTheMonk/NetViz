@@ -5,4 +5,4 @@ This a pretty unprofessional network tool written in python by students.
 Right now, it kinda works on Windows XP and mostly works on Mac OS X Snow Leapord.
 
 To run, src/netviz.py
-It requires pygame and (probably?) administrator privelegdes
+It requires pygame and (probably?) Administrator privileges
